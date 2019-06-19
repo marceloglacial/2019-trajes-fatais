@@ -10,7 +10,7 @@ Front-end Development of the brazilian game's website.
 - Optmized Images
 
 
-### Live Demo: 
+## Live Demo: 
 https://marceloglacial.github.io/2019-trajes-fatais/app/dist/
 
 
