@@ -14,7 +14,7 @@ Front-end Development of the brazilian game's website.
 https://marceloglacial.github.io/2019-trajes-fatais/app/dist/
 
 
-## Installation
+## How to Install
 
 - [Install npm](https://www.npmjs.com/get-npm)
 - [Install Gulp](https://gulpjs.com)
