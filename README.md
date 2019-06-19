@@ -25,7 +25,7 @@ Run install on terminal:
 npm install 
 ```
 
-# How to Use
+## How to Use
 
 - `npm start` - Start front-end developement
 - `npm run build` - Build project (minifed HTML, minified CSS, minified JS and optmized images).
