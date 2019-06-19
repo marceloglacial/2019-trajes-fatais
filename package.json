@@ -1,0 +1,44 @@
+{
+  "name": "2019-trajes-fatais",
+  "version": "0.0.1",
+  "description": "Trajes Fatais's Website",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marceloglacial/2019-trajes-fatais.git"
+  },
+  "author": "Marcelo Glacial Freitas",
+  "license": "OSL",
+  "bugs": {
+    "url": "https://github.com/marceloglacial/2019-trajes-fatais/issues"
+  },
+  "scripts": {
+    "start": "gulp frontend:start",
+    "build": "gulp frontend:build"
+  },
+  "browserslist": [
+    "last 3 versions"
+  ],
+  "homepage": "https://github.com/marceloglacial/2019-trajes-fatais#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "autoprefixer": "^9.5.0",
+    "babel": "^6.23.0",
+    "babel-core": "^6.26.3",
+    "bootstrap": "^4.3.1",
+    "browser-sync": "^2.26.3",
+    "del": "^4.1.1",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-compile-handlebars": "^0.6.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-purgecss": "^1.2.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2"
+  }
+}
