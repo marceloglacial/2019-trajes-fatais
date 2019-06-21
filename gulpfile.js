@@ -214,7 +214,7 @@ gulp.task('frontend:build',
         'frontend:styles-build',
         'frontend:scripts',
         'frontend:templates',
-        'frontend:purgecss',
+        // 'frontend:purgecss',
         'frontend:html',
         'frontend:images'
     )

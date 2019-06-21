@@ -6,11 +6,26 @@
     align-items: center;
     position: relative;
 
-    padding-top: 2rem;
+    padding-top: 1rem;
+
+    @include mq('large') {
+        padding-top: 2rem;
+    }
 
     .site-logo {
-        width: 220px;
-        height: 140px;
+        display: inline-block;
+        width: 140px;
+        height: 91px;
+
+        @include mq('large') {
+            width: 220px;
+            height: 140px;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
     }
 
     .main-navbar {
