@@ -40,21 +40,32 @@
     display: flex;
     flex-direction: column;
     width: 20rem;
-    height: 2rem;
+    height: 2.1rem;
     overflow: hidden;
 
     border: solid 1px white;
     border-radius: 0.25rem;
+    transition: all 0.2s ease-in-out;
+
+    &.open {
+        padding-bottom: 2.2rem;
+        margin-top: 2.2rem;
+        transition: all 0.2s ease-in-out;
+
+        .main-navbar-item {
+            background: unset;
+        }
+    }
 
     .main-navbar-items {
         height: 100%;
+        background: url('/images/arrow-down.svg') no-repeat calc(100% - 0.7rem) center;
     }
 
     .main-navbar-item {
         padding: 0;
         width: 100%;
         height: 100%;
-        background: url('images/arrow-down.svg') no-repeat calc(100% - 0.7rem) center;
 
         a {
             display: flex;
@@ -68,10 +79,10 @@
     }
 
     .lang-br a {
-        background: url('images/lang-br.svg') no-repeat 1rem center;
+        background: url('/images/lang-br.svg') no-repeat 1rem center;
     }
 
     .lang-en a {
-        background: url('images/lang-en.svg') no-repeat 1rem center;
+        background: url('/images/lang-en.svg') no-repeat 1rem center;
     }
 }

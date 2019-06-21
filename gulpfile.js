@@ -46,15 +46,15 @@ function styles(src, dest, minify) {
         .pipe(autoprefixer())
         // .pipe(sourcemaps.write())
         .pipe(concat('main.min.css'))
-        .pipe(gulp.dest(dest))
+        .pipe(gulp.dest(dest + 'css/'))
 };
 
 function purge(dest) {
-    return gulp.src(dest + '**/*.css')
+    return gulp.src(dest + 'css/**/*.css')
         .pipe(purgecss({
             content: [dest + '**/*.html']
         }))
-        .pipe(gulp.dest(dest))
+        .pipe(gulp.dest(dest + 'css/'))
 };
 
 // 2.3 - Minimize Scripts
@@ -70,7 +70,7 @@ function scripts(src, dist) {
         }))
         .pipe(uglify())
         .pipe(concat('main.min.js'))
-        .pipe(gulp.dest(dist))
+        .pipe(gulp.dest(dist + 'js/'))
     );
 };
 
@@ -201,7 +201,7 @@ gulp.task('frontend:develop',
         'frontend:styles',
         'frontend:scripts',
         'frontend:templates',
-        'frontend:purgecss',
+        // 'frontend:purgecss',
     )
 );
 
