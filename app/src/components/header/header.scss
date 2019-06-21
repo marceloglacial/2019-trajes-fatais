@@ -39,6 +39,38 @@
 
 .main-navbar--primary {
     flex-grow: 1;
+
+    .main-navbar-item {
+        position: relative;
+
+        &::before {
+            position: absolute;
+            bottom: -0.5rem;
+            // left: 0rem;
+            height: 3px;
+            width: 0%;
+            display: block;
+            content: '';
+            background: $pink;
+            transition: all 0.15s ease-in-out;
+            z-index: 0;
+            border-radius: 6px;
+        }
+
+        &:hover:before {
+            transition: all 0.15s ease-in-out;
+            width: calc(100% - 2rem);
+        }
+
+        a {
+            position: relative;
+            z-index: 10;
+        }
+
+        a:hover {
+            text-decoration: none;
+        }
+    }
 }
 
 .main-navbar--secondary {
