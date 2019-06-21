@@ -1038,6 +1038,9 @@ a {
   .main-header .site-logo {
     width: 220px;
     height: 140px; }
+  @media only screen and (max-width: 1059px) {
+    .main-header .main-navbar {
+      display: none; } }
   .main-header .main-navbar-items {
     list-style: none;
     padding: 0;
@@ -1079,11 +1082,29 @@ a {
     -webkit-transition: all 0.2s ease-in-out;
     -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out; }
+    .main-navbar--secondary.open .main-navbar-items::before {
+      -webkit-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out;
+      -webkit-transform: rotate(180deg) translateX(0.5rem);
+          -ms-transform: rotate(180deg) translateX(0.5rem);
+              transform: rotate(180deg) translateX(0.5rem); }
     .main-navbar--secondary.open .main-navbar-item {
       background: unset; }
   .main-navbar--secondary .main-navbar-items {
     height: 100%;
-    background: url("/images/arrow-down.svg") no-repeat calc(100% - 0.7rem) center; }
+    position: relative; }
+    .main-navbar--secondary .main-navbar-items::before {
+      display: block;
+      content: '';
+      height: 2rem;
+      width: 2rem;
+      background: url("/images/arrow-down.svg") no-repeat calc(100% - 0.7rem) center;
+      position: absolute;
+      right: 0;
+      -webkit-transition: all 0.2s ease-in-out;
+      -o-transition: all 0.2s ease-in-out;
+      transition: all 0.2s ease-in-out; }
   .main-navbar--secondary .main-navbar-item {
     padding: 0;
     width: 100%;

@@ -27,3 +27,12 @@ $pink: #6F1B77;
 
 $color-primary: $white;
 $color-accent: $pink;
+
+// Responsiveness
+// ------------------------------------------------
+$breakpoints: (
+    "small": 560px,
+    "medium": 768px,
+    "large": 1060px,
+    "extra-large": 1200px
+);
