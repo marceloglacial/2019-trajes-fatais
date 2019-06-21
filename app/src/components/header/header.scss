@@ -110,6 +110,15 @@
         }
 
     }
+
+    .mobile-navbar-items--social {
+        flex-direction: row;
+        justify-content: center;
+
+        .mobile-navbar-item--social {
+            margin: 1rem;
+        }
+    }
 }
 
 .main-navbar--primary {
@@ -121,7 +130,6 @@
         &::before {
             position: absolute;
             bottom: -0.5rem;
-            // left: 0rem;
             height: 3px;
             width: 0%;
             display: block;
@@ -166,7 +174,7 @@
         .main-navbar-items::before {
             transition: all 0.2s ease-in-out;
             transform: rotate(180deg) translateX(0.5rem);
-            // transform: scaleY(-1);
+            // transform: scaleY(-1); // flip vertical
         }
 
         .main-navbar-item {

@@ -1027,6 +1027,19 @@ a {
   max-width: 1200px;
   margin: 0 auto; }
 
+.hero {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  background-size: 100%;
+  z-index: -1; }
+  .hero img {
+    width: 100%;
+    height: auto; }
+
 .main-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1119,6 +1132,16 @@ a {
     @media only screen and (min-width: 1060px) {
       .main-header .mobile-navbar-btn {
         display: none; } }
+  .main-header .mobile-navbar-items--social {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    .main-header .mobile-navbar-items--social .mobile-navbar-item--social {
+      margin: 1rem; }
 
 .main-navbar--primary {
   -webkit-box-flex: 1;
@@ -1225,17 +1248,4 @@ a {
     background: url("/images/lang-br.svg") no-repeat 1rem center; }
   .main-navbar--secondary .lang-en a {
     background: url("/images/lang-en.svg") no-repeat 1rem center; }
-
-.hero {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-  background-size: 100%;
-  z-index: -1; }
-  .hero img {
-    width: 100%;
-    height: auto; }
 
