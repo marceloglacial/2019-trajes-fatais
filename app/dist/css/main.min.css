@@ -1034,6 +1034,7 @@ a {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
   padding-top: 2rem; }
   .main-header .site-logo {
     width: 220px;
@@ -1054,6 +1055,59 @@ a {
       display: -ms-flexbox;
       display: flex;
       height: 100%; }
+  .main-header .mobile-navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow-y: scroll;
+    z-index: 1000;
+    background: white;
+    text-align: center;
+    padding: 3rem 0;
+    -webkit-transform: translateX(130%);
+        -ms-transform: translateX(130%);
+            transform: translateX(130%);
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: -webkit-transform 0.3s ease-in-out;
+    -o-transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out; }
+    .main-header .mobile-navbar.open {
+      -webkit-transform: translateX(0);
+          -ms-transform: translateX(0);
+              transform: translateX(0); }
+    .main-header .mobile-navbar a {
+      color: #6F1B77;
+      font-weight: 700;
+      font-size: 1.25rem; }
+    .main-header .mobile-navbar-items {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      list-style: none;
+      padding: 0; }
+    .main-header .mobile-navbar-item:not(:last-child) {
+      margin-bottom: 1rem; }
+    .main-header .mobile-navbar .mobile-navbar-btn {
+      top: 2rem; }
+  .main-header .mobile-navbar-btn {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    background: #6F1B77;
+    position: absolute;
+    right: 2rem; }
+    .main-header .mobile-navbar-btn:hover {
+      cursor: pointer; }
+    @media only screen and (min-width: 1060px) {
+      .main-header .mobile-navbar-btn {
+        display: none; } }
 
 .main-navbar--primary {
   -webkit-box-flex: 1;
