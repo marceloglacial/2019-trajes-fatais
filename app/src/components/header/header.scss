@@ -68,6 +68,10 @@
 
         &.open {
             transform: translateX(0);
+            .mobile-navbar-btn {
+                background-image: url('../images/menu-close.svg');
+                background-size: 50%;
+            }
         }
 
         a {
@@ -97,7 +101,8 @@
         display: block;
         width: 2rem;
         height: 2rem;
-        background: $color-accent;
+        background: url('../images/menu-open.svg') center center no-repeat;
+        background-size: 90%;
         position: absolute;
         right: 2rem;
 
@@ -117,6 +122,10 @@
 
         .mobile-navbar-item--social {
             margin: 1rem;
+
+            &:hover {
+                opacity: 0.7;
+            }
         }
     }
 }

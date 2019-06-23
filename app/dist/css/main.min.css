@@ -1027,19 +1027,6 @@ a {
   max-width: 1200px;
   margin: 0 auto; }
 
-.hero {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-  background-size: 100%;
-  z-index: -1; }
-  .hero img {
-    width: 100%;
-    height: auto; }
-
 .main-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1102,6 +1089,9 @@ a {
       -webkit-transform: translateX(0);
           -ms-transform: translateX(0);
               transform: translateX(0); }
+      .main-header .mobile-navbar.open .mobile-navbar-btn {
+        background-image: url("../images/menu-close.svg");
+        background-size: 50%; }
     .main-header .mobile-navbar a {
       color: #6F1B77;
       font-weight: 700;
@@ -1124,7 +1114,8 @@ a {
     display: block;
     width: 2rem;
     height: 2rem;
-    background: #6F1B77;
+    background: url("../images/menu-open.svg") center center no-repeat;
+    background-size: 90%;
     position: absolute;
     right: 2rem; }
     .main-header .mobile-navbar-btn:hover {
@@ -1142,6 +1133,8 @@ a {
             justify-content: center; }
     .main-header .mobile-navbar-items--social .mobile-navbar-item--social {
       margin: 1rem; }
+      .main-header .mobile-navbar-items--social .mobile-navbar-item--social:hover {
+        opacity: 0.7; }
 
 .main-navbar--primary {
   -webkit-box-flex: 1;
@@ -1248,4 +1241,17 @@ a {
     background: url("/images/lang-br.svg") no-repeat 1rem center; }
   .main-navbar--secondary .lang-en a {
     background: url("/images/lang-en.svg") no-repeat 1rem center; }
+
+.hero {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  background-size: 100%;
+  z-index: -1; }
+  .hero img {
+    width: 100%;
+    height: auto; }
 
