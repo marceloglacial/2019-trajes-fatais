@@ -10,11 +10,16 @@
 // Basic Structure
 // ------------------------------------------------
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     background: $black;
     color: $color-primary;
     font-family: $font-primary;
-    font-size: $size-16;
+    font-weight: $weight-normal;
+    font-size: $size-16;    
 }
 
 a {
@@ -45,30 +50,46 @@ figure {
 // Buttons
 // ------------------------------------------------
 .btn {
-    font-size: $size-18;
-    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    font-size: $size-14;
     color: $white;
-    padding: 0 1rem;
+    padding: 0 0.5rem;
     border-radius: 6px;
     border: solid 2px;
-    min-width: 216px;
-    min-height: 64px;
+    min-width: 105px;
+    min-height: 38px;
     background: none;
     transition: all 0.2s ease-in-out;
+
+    @include mq('large') {
+        font-size: $size-18;
+        text-transform: uppercase;
+        min-width: 216px;
+        min-height: 64px;
+    }
 
     &:hover {
         opacity: 0.7;
         cursor: pointer;
+        text-decoration: none;
     }
 
     &--primary {
         background: $color-accent;
         border-color: $color-accent;
-        font-weight: $weight-bold;
-        letter-spacing: 3px;
+
+        @include mq('large') {
+            font-weight: $weight-bold;
+            letter-spacing: 3px;
+        }
     }
 
     &--secondary {
-        letter-spacing: 2px;
+        @include mq('large') {
+            letter-spacing: 2px;
+        }
     }
 }
