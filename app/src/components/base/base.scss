@@ -15,7 +15,7 @@
 }
 
 body {
-    background: $black;
+    background: $black-soft;
     color: $color-primary;
     font-family: $font-primary;
     font-weight: $weight-normal;
@@ -32,9 +32,11 @@ a {
     }
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
+section {
+    @include mq('extra-large', 'max') {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
 
 img {

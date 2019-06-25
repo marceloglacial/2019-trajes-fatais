@@ -3,35 +3,21 @@
 @import '../base/variables';
 @import '../base/mixins';
 
-// Hero 
-// ------------------------------------------------
-.hero {
-    position: absolute;
-    width: 100%;
-    min-height: 100vh;
-    top: 0;
-    left: 0;
-    background-size: 100%;
-    z-index: -1;
-}
-
-
 // Hero Slider 
 // ------------------------------------------------
 .hero-slider {
     display: flex;
-    width: 100%;
-    height: 100vh;
-    min-height: 720px;
-    align-items: center;
+    min-height: 42vh;
+    align-items: flex-end;
+
+    @include mq('large') {
+        min-height: 550px;
+    }
 }
 
 // TO-DO: https://css-tricks.com/practical-css-scroll-snapping/
 .hero-slide {
-    $hero-slide-width: 570px;
-    padding-left: 1rem;
-    padding-right: 1rem;
-
+    $hero-slide-width: 50%;
 
     &-title {
         max-width: $hero-slide-width;
@@ -56,7 +42,7 @@
         @include mq('large') {
             display: inline-block;
         }
-    
+
     }
 
     &-image {
@@ -65,7 +51,20 @@
         left: 0;
         z-index: -1;
         width: 100%;
-        height: 100vh;
+        min-height: 1200px;
+        overflow: hidden;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200%;
+
+            @include mq('small') {
+                width: 100%;
+            }
+        }
     }
 
     &-actions {
