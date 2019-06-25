@@ -1,8 +1,10 @@
 // Imports
+// ------------------------------------------------
 @import '../base/variables';
 @import '../base/mixins';
 
 // Hero 
+// ------------------------------------------------
 .hero {
     position: absolute;
     width: 100%;
@@ -13,6 +15,9 @@
     z-index: -1;
 }
 
+
+// Hero Slider 
+// ------------------------------------------------
 .hero-slider {
     display: flex;
     width: 100%;
@@ -36,6 +41,7 @@
     &-description {
         max-width: $hero-slide-width;
         line-height: $size-26;
+        padding-bottom: 2rem;
     }
 
     &-image {
@@ -43,5 +49,11 @@
         top: 0;
         left: 0;
         z-index: -1;
+    }
+
+    &-actions {
+        .btn {
+            margin-right: 1rem;
+        }
     }
 }

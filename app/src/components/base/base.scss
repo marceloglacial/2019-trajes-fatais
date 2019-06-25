@@ -42,12 +42,15 @@ figure {
     padding: 0;
 }
 
+// Buttons
+// ------------------------------------------------
 .btn {
     font-size: $size-18;
     text-transform: uppercase;
     color: $white;
     padding: 0 1rem;
     border-radius: 6px;
+    border: solid 2px;
     min-width: 216px;
     min-height: 64px;
     background: none;
@@ -67,6 +70,5 @@ figure {
 
     &--secondary {
         letter-spacing: 2px;
-
     }
 }
