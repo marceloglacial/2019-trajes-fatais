@@ -1037,14 +1037,27 @@ figure {
   padding: 0; }
 
 .btn {
+  font-size: 1.125rem;
+  text-transform: uppercase;
   color: #FFFFFF;
-  padding: 1rem;
+  padding: 0 1rem;
   border-radius: 6px;
   min-width: 216px;
   min-height: 64px;
-  background: #6F1B77;
-  border-color: #6F1B77;
-  text-transform: uppercase; }
+  background: none;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out; }
+  .btn:hover {
+    opacity: 0.7;
+    cursor: pointer; }
+  .btn--primary {
+    background: #6F1B77;
+    border-color: #6F1B77;
+    font-weight: 700;
+    letter-spacing: 3px; }
+  .btn--secondary {
+    letter-spacing: 2px; }
 
 .main-header {
   display: -webkit-box;
