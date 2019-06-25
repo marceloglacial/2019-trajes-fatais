@@ -14,6 +14,7 @@ body {
     background: $black;
     color: $color-primary;
     font-family: $font-primary;
+    font-size: $size-16;
 }
 
 a {
@@ -29,4 +30,25 @@ a {
 .container {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+.btn {
+    color: $white;
+    padding: 1rem;
+    border-radius: 6px;
+    min-width: 216px;
+    min-height: 64px;
+    background: $color-accent;
+    border-color: $color-accent;
+    text-transform: uppercase;
 }
