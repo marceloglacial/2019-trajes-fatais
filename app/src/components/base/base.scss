@@ -1,39 +1,11 @@
-// CSS Framework
+// Imports
 // ------------------------------------------------
-@import '../../../../node_modules/bootstrap/scss/bootstrap.scss';
-
-// Fonts
-// ------------------------------------------------
+@import './variables';
+@import './mixins';
+@import './reset';
+@import './grid';
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap');
 
-// Variables
-// ------------------------------------------------
-$font-primary: 'Roboto', sans-serif;
-
-// Sizes
-// ------------------------------------------------
-$size-13: 0.8125rem;
-$size-16: 1rem;
-$size-18: 1.125rem;
-$size-22: 1.375rem;
-$size-32: 2rem;
-$size-40: 2.5rem;
-$size-48: 3rem;
-
-// Weights 
-// ------------------------------------------------
-$weight-light: 300;
-$weight-normal: 400;
-$weight-bold: 700;
-
-// Colors
-// ------------------------------------------------
-$white: #FFFFFF;
-$black: #000000;
-$pink: #6F1B77;
-
-$color-primary: $white;
-$color-accent: $pink;
 
 // Basic Structure
 // ------------------------------------------------
@@ -45,5 +17,16 @@ body {
 }
 
 a {
-    color: $pink;
+    font-weight: $weight-light;
+    color: $color-primary;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
