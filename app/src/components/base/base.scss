@@ -32,13 +32,6 @@ a {
     }
 }
 
-section {
-    @include mq('extra-large', 'max') {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-}
-
 img {
     width: 100%;
     height: auto;

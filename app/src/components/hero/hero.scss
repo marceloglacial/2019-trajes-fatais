@@ -3,21 +3,37 @@
 @import '../base/variables';
 @import '../base/mixins';
 
-// Hero Slider 
-// ------------------------------------------------
-.hero-slider {
-    display: flex;
-    min-height: 42vh;
-    align-items: flex-end;
-
-    @include mq('large') {
-        min-height: 550px;
-    }
-}
+// Local variables 
+$hero-slide-width: 50%;
 
 // TO-DO: https://css-tricks.com/practical-css-scroll-snapping/
 .hero-slide {
-    $hero-slide-width: 50%;
+
+    &-info {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        height: 100vh;
+        padding-bottom: 4rem;
+
+        @include mq('medium') {
+            max-height: 460px;
+        }
+
+        @include mq('large') {
+            max-height: 820px;
+            min-height: 650px;
+            padding-bottom: 4rem;
+        }
+
+        @include mq('super-large') {
+            max-height: 1080px;
+        }
+        @include mq('4k') {
+            max-height: 1380px;
+        }
+    }
 
     &-title {
         max-width: $hero-slide-width;
@@ -53,24 +69,65 @@
         width: 100%;
         min-height: 1200px;
         overflow: hidden;
-
-        img {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 200%;
-
-            @include mq('small') {
-                width: 100%;
-            }
-        }
     }
 
     &-actions {
         .btn {
             margin-right: 1rem;
-            margin-bottom: 1rem;
+        }
+    }
+}
+
+.hero-slider-controls {
+    position: absolute;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    bottom: 1rem;
+    right: 50%;
+    transform: translateX(50%);
+
+    @include mq('medium') {
+        right: 1rem;
+        bottom: 4rem;
+        transform: unset;
+    }
+
+    @include mq('large') {
+        height: 64px;
+        bottom: 4rem;
+    }
+
+    &-item {
+        display: inline-block;
+        height: 1rem;
+        width: 1rem;
+        border: solid 2px $white;
+        border-radius: 100%;
+        margin-right: 1rem;
+        transition: all 0.3s ease-in-out;
+
+        &.active {
+            background: $white;
+        }
+
+        &:hover {
+            cursor: pointer;
+            opacity: 0.7;
+        }
+    }
+    &-next {
+        display: inline-block;
+        background: url('../images/arrow-right.svg') no-repeat top left;
+        background-size: cover;
+        width: 54px;
+        height: 24px;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            opacity: 0.7;
         }
     }
 }

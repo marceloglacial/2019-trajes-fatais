@@ -4,16 +4,18 @@
 
 // Header 
 .main-header {
-    display: flex;
-    align-items: center;
-    position: relative;
-
-    padding-top: 1rem;
-
-    @include mq('large') {
-        padding-top: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999999;
+    
+    .container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding-top: 1rem;
     }
-
     .site-logo {
         display: inline-block;
         width: 140px;
@@ -61,7 +63,6 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        overflow-y: scroll;
         z-index: 1000;
         background: white;
         text-align: center;
@@ -132,6 +133,10 @@
 
 .main-navbar--primary {
     flex-grow: 1;
+
+    .main-navbar-items {
+        display: flex;
+    }
 
     .main-navbar-item {
         position: relative;
