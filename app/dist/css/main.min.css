@@ -369,7 +369,8 @@ figure {
   background: none;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out; }
+  transition: all 0.2s ease-in-out;
+  position: relative; }
   @media only screen and (min-width: 1024px) {
     .btn {
       font-size: 1.125rem;
@@ -377,135 +378,35 @@ figure {
       min-width: 216px;
       min-height: 64px; } }
   .btn:hover {
-    opacity: 0.7;
     cursor: pointer;
     text-decoration: none; }
   .btn--primary {
     background: #6F1B77;
-    border-color: #6F1B77; }
+    border-color: #6F1B77;
+    position: relative; }
     @media only screen and (min-width: 1024px) {
       .btn--primary {
         font-weight: 700;
         letter-spacing: 3px; } }
+    .btn--primary::after {
+      position: absolute;
+      z-index: 10;
+      display: block;
+      content: '';
+      height: 100%;
+      width: 0;
+      border: solid 0px rgba(0, 0, 0, 0.1);
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 6px;
+      -webkit-transition: all 0.1s ease-in-out;
+      -o-transition: all 0.1s ease-in-out;
+      transition: all 0.1s ease-in-out; }
+    .btn--primary:hover:after {
+      width: 100%;
+      border-width: 2px; }
   @media only screen and (min-width: 1024px) {
     .btn--secondary {
       letter-spacing: 2px; } }
-
-.hero-slide-info {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  height: 100vh;
-  padding-bottom: 4rem; }
-  @media only screen and (min-width: 768px) {
-    .hero-slide-info {
-      max-height: 460px; } }
-  @media only screen and (min-width: 1024px) {
-    .hero-slide-info {
-      max-height: 820px;
-      min-height: 650px;
-      padding-bottom: 4rem; } }
-  @media only screen and (min-width: 1920px) {
-    .hero-slide-info {
-      max-height: 1080px; } }
-  @media only screen and (min-width: 2560px) {
-    .hero-slide-info {
-      max-height: 1380px; } }
-
-.hero-slide-title {
-  max-width: 50%; }
-  .hero-slide-title h1 {
-    font-size: 1.25rem;
-    line-height: 1.625rem; }
-    @media only screen and (min-width: 1024px) {
-      .hero-slide-title h1 {
-        font-size: 3rem;
-        line-height: 4rem; } }
-
-.hero-slide-description {
-  display: none;
-  max-width: 50%;
-  line-height: 1.625rem;
-  padding-bottom: 2rem; }
-  @media only screen and (min-width: 1024px) {
-    .hero-slide-description {
-      display: inline-block; } }
-
-.hero-slide-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  min-height: 1200px;
-  overflow: hidden; }
-
-.hero-slide-actions .btn {
-  margin-right: 1rem; }
-
-.hero-slider-controls {
-  position: absolute;
-  height: 38px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  bottom: 1rem;
-  right: 50%;
-  -webkit-transform: translateX(50%);
-      -ms-transform: translateX(50%);
-          transform: translateX(50%); }
-  @media only screen and (min-width: 768px) {
-    .hero-slider-controls {
-      right: 1rem;
-      bottom: 4rem;
-      -webkit-transform: unset;
-          -ms-transform: unset;
-              transform: unset; } }
-  @media only screen and (min-width: 1024px) {
-    .hero-slider-controls {
-      height: 64px;
-      bottom: 4rem; } }
-  .hero-slider-controls-item {
-    display: inline-block;
-    height: 1rem;
-    width: 1rem;
-    border: solid 2px #FFFFFF;
-    border-radius: 100%;
-    margin-right: 1rem;
-    -webkit-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out; }
-    .hero-slider-controls-item.active {
-      background: #FFFFFF; }
-    .hero-slider-controls-item:hover {
-      cursor: pointer;
-      opacity: 0.7; }
-  .hero-slider-controls-next {
-    display: inline-block;
-    background: url("../images/arrow-right.svg") no-repeat top left;
-    background-size: cover;
-    width: 54px;
-    height: 24px;
-    -webkit-transition: all 0.3s ease-in-out;
-    -o-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out; }
-    .hero-slider-controls-next:hover {
-      cursor: pointer;
-      opacity: 0.7; }
 
 .main-header {
   position: absolute;
@@ -732,3 +633,119 @@ figure {
     background: url("../images/lang-en.png") no-repeat 1rem center;
     background-size: 23px; }
 
+
+.hero-slide-info {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  height: 100vh;
+  padding-bottom: 4rem; }
+  @media only screen and (min-width: 768px) {
+    .hero-slide-info {
+      max-height: 460px; } }
+  @media only screen and (min-width: 1024px) {
+    .hero-slide-info {
+      max-height: 820px;
+      min-height: 650px;
+      padding-bottom: 4rem; } }
+  @media only screen and (min-width: 1920px) {
+    .hero-slide-info {
+      max-height: 1080px; } }
+  @media only screen and (min-width: 2560px) {
+    .hero-slide-info {
+      max-height: 1380px; } }
+
+.hero-slide-title {
+  max-width: 50%; }
+  .hero-slide-title h1 {
+    font-size: 1.25rem;
+    line-height: 1.625rem; }
+    @media only screen and (min-width: 1024px) {
+      .hero-slide-title h1 {
+        font-size: 3rem;
+        line-height: 4rem; } }
+
+.hero-slide-description {
+  display: none;
+  max-width: 50%;
+  line-height: 1.625rem;
+  padding-bottom: 2rem; }
+  @media only screen and (min-width: 1024px) {
+    .hero-slide-description {
+      display: inline-block; } }
+
+.hero-slide-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  min-height: 1200px;
+  overflow: hidden; }
+
+.hero-slide-actions .btn {
+  margin-right: 1rem; }
+
+.hero-slider-controls {
+  position: absolute;
+  height: 38px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  bottom: 1rem;
+  right: 50%;
+  -webkit-transform: translateX(50%);
+      -ms-transform: translateX(50%);
+          transform: translateX(50%); }
+  @media only screen and (min-width: 768px) {
+    .hero-slider-controls {
+      right: 1rem;
+      bottom: 4rem;
+      -webkit-transform: unset;
+          -ms-transform: unset;
+              transform: unset; } }
+  @media only screen and (min-width: 1024px) {
+    .hero-slider-controls {
+      height: 64px;
+      bottom: 4rem; } }
+  .hero-slider-controls-item {
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    border: solid 2px #FFFFFF;
+    border-radius: 100%;
+    margin-right: 1rem;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .hero-slider-controls-item.active {
+      background: #FFFFFF; }
+    .hero-slider-controls-item:hover {
+      cursor: pointer;
+      opacity: 0.7; }
+  .hero-slider-controls-next {
+    display: inline-block;
+    background: url("../images/arrow-right.svg") no-repeat top left;
+    background-size: cover;
+    width: 54px;
+    height: 24px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out; }
+    .hero-slider-controls-next:hover {
+      cursor: pointer;
+      opacity: 0.7; }
