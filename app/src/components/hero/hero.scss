@@ -47,6 +47,7 @@ $hero-slide-width: 50%;
         h1 {
             font-size: $size-20;
             line-height: $size-26;
+            margin-bottom: 1rem;
 
             @include mq('large') {
                 font-size: $size-48;
