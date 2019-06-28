@@ -10,10 +10,16 @@
 // Basic Structure
 // ------------------------------------------------
 
+* {
+    box-sizing: border-box;
+}
+
 body {
-    background: $black;
+    background: $black-soft;
     color: $color-primary;
     font-family: $font-primary;
+    font-weight: $weight-normal;
+    font-size: $size-16;
 }
 
 a {
@@ -26,7 +32,79 @@ a {
     }
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
+img {
+    width: 100%;
+    height: auto;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+// Buttons
+// ------------------------------------------------
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    float: left;
+    font-size: $size-14;
+    color: $white;
+    padding: 0 0.5rem;
+    border-radius: 6px;
+    border: solid 2px;
+    min-width: 105px;
+    min-height: 38px;
+    background: none;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+
+    @include mq('large') {
+        font-size: $size-18;
+        text-transform: uppercase;
+        min-width: 216px;
+        min-height: 64px;
+    }
+
+    &:hover {
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    &--primary {
+        background: $color-accent;
+        border-color: $color-accent;
+        position: relative;
+
+        @include mq('large') {
+            font-weight: $weight-bold;
+            letter-spacing: 3px;
+        }
+
+        &::after {
+            position: absolute;
+            z-index: 10;
+            display: block;
+            content: '';
+            height: 100%;
+            width: 0;
+            border: solid 0px rgba($color: #000000, $alpha: 0.1);
+            background-color: rgba($color: #000000, $alpha: 0.3);
+            border-radius: 6px;
+            transition: all 0.1s ease-in-out
+        }
+
+        &:hover:after {
+            width: 100%;
+            border-width: 2px;
+        }
+
+    }
+
+    &--secondary {
+        @include mq('large') {
+            letter-spacing: 2px;
+        }
+    }
 }
