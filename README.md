@@ -1,4 +1,4 @@
-# Trajes Fatais (2019)
+# Trajes Fatais (WIP - 2019)
 Front-end Development of the brazilian game's website.
 
 ## Features
