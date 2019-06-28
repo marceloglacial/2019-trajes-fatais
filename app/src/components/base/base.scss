@@ -19,7 +19,7 @@ body {
     color: $color-primary;
     font-family: $font-primary;
     font-weight: $weight-normal;
-    font-size: $size-16;    
+    font-size: $size-16;
 }
 
 a {
@@ -72,8 +72,6 @@ figure {
         text-decoration: none;
     }
 
-
-
     &--primary {
         background: $color-accent;
         border-color: $color-accent;
@@ -83,6 +81,7 @@ figure {
             font-weight: $weight-bold;
             letter-spacing: 3px;
         }
+
         &::after {
             position: absolute;
             z-index: 10;
@@ -95,6 +94,7 @@ figure {
             border-radius: 6px;
             transition: all 0.1s ease-in-out
         }
+
         &:hover:after {
             width: 100%;
             border-width: 2px;

@@ -8,6 +8,8 @@ $hero-slide-width: 50%;
 
 // TO-DO: https://css-tricks.com/practical-css-scroll-snapping/
 .hero-slide {
+    min-width: 100%;
+    display: none;
 
     &-info {
         position: relative;
