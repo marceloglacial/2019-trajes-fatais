@@ -1,17 +1,21 @@
+// Imports
 @import '../base/variables';
 @import '../base/mixins';
 
+// Header 
 .main-header {
-    display: flex;
-    align-items: center;
-    position: relative;
-
-    padding-top: 1rem;
-
-    @include mq('large') {
-        padding-top: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999999;
+    
+    .container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        padding-top: 1rem;
     }
-
     .site-logo {
         display: inline-block;
         width: 140px;
@@ -41,6 +45,7 @@
 
         &-item {
             font-size: $size-18;
+            font-weight: $weight-light;
             text-transform: uppercase;
             padding: 0 1rem;
 
@@ -56,9 +61,8 @@
         position: fixed;
         top: 0;
         left: 0;
-        width: 100%;
+        width: 100vw;
         height: 100vh;
-        overflow-y: scroll;
         z-index: 1000;
         background: white;
         text-align: center;
@@ -91,11 +95,6 @@
         &-item:not(:last-child) {
             margin-bottom: 1rem;
         }
-
-        .mobile-navbar-btn {
-            top: 2rem;
-        }
-
     }
 
     .mobile-navbar-btn {
@@ -105,7 +104,8 @@
         background: url('../images/menu-open.svg') center center no-repeat;
         background-size: 90%;
         position: absolute;
-        right: 2rem;
+        right: 1.5rem;
+        top: 1.5rem;
 
         &:hover {
             cursor: pointer;
@@ -133,6 +133,10 @@
 
 .main-navbar--primary {
     flex-grow: 1;
+
+    .main-navbar-items {
+        display: flex;
+    }
 
     .main-navbar-item {
         position: relative;
@@ -175,6 +179,7 @@
     border: solid 1px white;
     border-radius: 0.25rem;
     transition: all 0.2s ease-in-out;
+    box-sizing: content-box;
 
     &.open {
         padding-bottom: 2.1rem;
@@ -233,10 +238,12 @@
     }
 
     .lang-br a {
-        background: url('/images/lang-br.svg') no-repeat 1rem center;
+        background: url('../images/lang-br.png') no-repeat 1rem center;
+        background-size: 23px;
     }
 
     .lang-en a {
-        background: url('/images/lang-en.svg') no-repeat 1rem center;
+        background: url('../images/lang-en.png') no-repeat 1rem center;
+        background-size: 23px;
     }
 }

@@ -1,46 +1,59 @@
-<header class="main-header container">
-    <a href="/" title="Go to home page" class="site-logo ">
-        <img src="images/logo.png" srcset="images/logo@2x.png 1000w, images/logo@3x.png 2000w" alt="Site logo" width="220" height="140">
-    </a>
-    <nav aria-labelledby="primary-nav-label" class="main-navbar main-navbar--primary">
-        <div id="primary-nav-label" hidden>Primary</div>
-        <ul class="main-navbar-items row">
-            <li class="main-navbar-item col"><a href="#personagens">Personagens</a></li>
-            <li class="main-navbar-item col"><a href="#sobre">Sobre o Jogo</a></li>
-            <li class="main-navbar-item col"><a href="#contato">Contato</a></li>
-        </ul>
-    </nav>
-
-    <nav aria-labelledby="secondary-nav-label"  class="main-navbar main-navbar--secondary">
-        <div id="secondary-nav-label" hidden>Secondary</div>
-        <ul class="main-navbar-items">
-            <li class="main-navbar-item lang-br"><a href="#br">Português do Brasil</a></li>
-            <li class="main-navbar-item lang-en"><a href="#en">English (US)</a></li>
-        </ul>
-    </nav>
-
-    <nav aria-labelledby="mobile-nav-label"  class="mobile-navbar">
-        <div class="mobile-navbar-btn"></div>
-            
-        <div id="mobile-nav-label" hidden>Mobile</div>
+<header class="main-header">
+    <div class="container">
         <a href="/" title="Go to home page" class="site-logo ">
-            <img src="images/logo.png" srcset="images/logo@2x.png 1000w, images/logo@3x.png 2000w" alt="Site logo" width="220" height="140">
+            <picture>
+                <source media="(max-width: 567px)" srcset="images/logo.png">
+                <source media="(min-width: 568px)" srcset="images/logo@2x.png">
+                <source media="(min-width: 767px)" srcset="images/logo@3x.png">
+                <img src="images/logo.png" alt="Site Logo">
+            </picture>
         </a>
-        <ul class="mobile-navbar-items row">
-            <li class="mobile-navbar-item col"><a href="#baixe">Baixe o Jogo</a></li>
-            <li class="mobile-navbar-item col"><a href="#personagens">Personagens</a></li>
-            <li class="mobile-navbar-item col"><a href="#historia">Nossa História</a></li>
-            <li class="mobile-navbar-item col"><a href="#premios">Prêmios</a></li>
-            <li class="mobile-navbar-item col"><a href="#contato">Contato</a></li>
-        </ul>
+        <nav aria-labelledby="primary-nav-label" class="main-navbar main-navbar--primary">
+            <div id="primary-nav-label" hidden>Primary</div>
+            <ul class="main-navbar-items row">
+                <li class="main-navbar-item col"><a href="#personagens">Personagens</a></li>
+                <li class="main-navbar-item col"><a href="#sobre">Sobre o Jogo</a></li>
+                <li class="main-navbar-item col"><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
 
-        <ul class="mobile-navbar-items mobile-navbar-items--social">
-            <li class="mobile-navbar-item--social icon-facebook"><a href="#"><img src="images/facebook-mobile.svg" alt="Facebook"></a></li>
-            <li class="mobile-navbar-item--social icon-instagram"><a href="#"><img src="images/instagram-mobile.svg" alt="Instagram"></a></li>
-            <li class="mobile-navbar-item--social icon-twitter"><a href="#"><img src="images/twitter-mobile.svg" alt="Twitter"></a></li>
-            <li class="mobile-navbar-item--social icon-youtube"><a href="#"><img src="images/youtube-mobile.svg" alt="YouTube"></a></li>
-        </ul>
-    </nav>
+        <nav aria-labelledby="secondary-nav-label" class="main-navbar main-navbar--secondary">
+            <div id="secondary-nav-label" hidden>Secondary</div>
+            <ul class="main-navbar-items">
+                <li class="main-navbar-item lang-br"><a href="#br">Português do Brasil</a></li>
+                <li class="main-navbar-item lang-en"><a href="#en">English (US)</a></li>
+            </ul>
+        </nav>
 
-    <div class="mobile-navbar-btn"></div>
+        <nav aria-labelledby="mobile-nav-label" class="mobile-navbar">
+            <div class="mobile-navbar-btn"></div>
+
+            <div id="mobile-nav-label" hidden>Mobile</div>
+            <a href="/" title="Go to home page" class="site-logo " tabindex="-1">
+                <img src="images/logo.png" srcset="images/logo@2x.png 1000w, images/logo@3x.png 2000w" alt="Site logo"
+                    width="220" height="140">
+            </a>
+            <ul class="mobile-navbar-items row">
+                <li class="mobile-navbar-item col"><a href="#baixe" tabindex="-1">Baixe o Jogo</a></li>
+                <li class="mobile-navbar-item col"><a href="#personagens" tabindex="-1">Personagens</a></li>
+                <li class="mobile-navbar-item col"><a href="#historia" tabindex="-1">Nossa História</a></li>
+                <li class="mobile-navbar-item col"><a href="#premios" tabindex="-1">Prêmios</a></li>
+                <li class="mobile-navbar-item col"><a href="#contato" tabindex="-1">Contato</a></li>
+            </ul>
+
+            <ul class="mobile-navbar-items mobile-navbar-items--social">
+                <li class="mobile-navbar-item--social icon-facebook"><a href="#" tabindex="-1"><img
+                            src="images/facebook-mobile.svg" alt="Facebook"></a></li>
+                <li class="mobile-navbar-item--social icon-instagram"><a href="#" tabindex="-1"><img
+                            src="images/instagram-mobile.svg" alt="Instagram"></a></li>
+                <li class="mobile-navbar-item--social icon-twitter"><a href="#" tabindex="-1"><img
+                            src="images/twitter-mobile.svg" alt="Twitter"></a></li>
+                <li class="mobile-navbar-item--social icon-youtube"><a href="#" tabindex="-1"><img
+                            src="images/youtube-mobile.svg" alt="YouTube"></a></li>
+            </ul>
+        </nav>
+
+        <div class="mobile-navbar-btn"></div>
+
+    </div>
 </header>
