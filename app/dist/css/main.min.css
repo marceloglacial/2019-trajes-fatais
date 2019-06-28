@@ -633,6 +633,10 @@ figure {
     .btn--secondary {
       letter-spacing: 2px; } }
 
+
+.hero-slides {
+  position: relative; }
+
 .hero-slide {
   min-width: 100%;
   display: none; }
@@ -692,8 +696,12 @@ figure {
   .hero-slide-actions .btn {
     margin-right: 1rem; }
 
+.hero-slider-control {
+  position: relative; }
+
 .hero-slider-controls {
   position: absolute;
+  z-index: 99;
   height: 38px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -747,4 +755,3 @@ figure {
     .hero-slider-controls-next:hover {
       cursor: pointer;
       opacity: 0.7; }
-

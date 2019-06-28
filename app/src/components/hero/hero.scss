@@ -6,6 +6,10 @@
 // Local variables 
 $hero-slide-width: 50%;
 
+.hero-slides {
+    position: relative;
+}
+
 // TO-DO: https://css-tricks.com/practical-css-scroll-snapping/
 .hero-slide {
     min-width: 100%;
@@ -79,9 +83,13 @@ $hero-slide-width: 50%;
         }
     }
 }
+.hero-slider-control {
+    position: relative;
+}
 
 .hero-slider-controls {
     position: absolute;
+    z-index: 99;
     height: 38px;
     display: flex;
     align-items: center;

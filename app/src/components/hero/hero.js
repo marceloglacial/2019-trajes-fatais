@@ -25,7 +25,7 @@ const changeSlide = () => {
     slideIndex++; 
 
     // Hide all other slides
-    $('.hero-slide:not(:nth-child(' + slideIndex + '))').fadeOut(); 
+    $('.hero-slide:not(:nth-child(' + slideIndex + '))').hide(); 
 
     // Chack if is the last slide
     if (slideIndex > slidesNumber) {
