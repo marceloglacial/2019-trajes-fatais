@@ -408,6 +408,32 @@ figure {
     .btn--secondary {
       letter-spacing: 2px; } }
 
+.characters__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.characters__list-item {
+  position: relative;
+  width: 335px;
+  height: 370px;
+  margin-left: 1rem; }
+  .characters__list-item .characters__list-item__description {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem; }
+    .characters__list-item .characters__list-item__description__title {
+      font-size: 2rem;
+      display: block;
+      max-width: 50%;
+      color: #FFB301;
+      margin: 0 0 1rem 0;
+      padding: 0;
+      line-height: 2rem; }
+    .characters__list-item .characters__list-item__description__text {
+      padding: 0;
+      margin: 0; }
+
 .hero-slides {
   position: relative; }
 
