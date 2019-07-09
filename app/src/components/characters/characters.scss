@@ -1,29 +1,114 @@
-.characters__list {
-    display: flex;
+.characters {
+    padding-bottom: 4rem;
 }
+.characters__header {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+
+    &::before {
+        display: block;
+        content: '';
+        width: 60px;
+        height: 60px;
+        background: url('../images/characters-title-icon.svg') no-repeat;
+        float: left;
+        margin-right: 10px;
+    }
+}
+
+.characters__title {
+    font-size: 40px;
+    font-weight: bold;
+    color: #FFF;
+    margin: 0;
+    padding: 0;
+}
+
+.characters__subtitle {
+    color: #D0971D;
+    margin: 0;
+    padding: 0;
+}
+
+.characters__list-items {
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 100%;
+    padding-left: 6%;
+    padding-bottom: 1rem;
+
+    &::-webkit-scrollbar {
+        background: transparent;
+        height: 0;
+    }
+}
+
 .characters__list-item {
     position: relative;
-    width: 335px;
-    height: 370px;
+    min-width: 334px;
+    height: 371px;
     margin-left: 1rem;
+    border-radius: 1rem;
 
-    .characters__list-item__description {
+    figure::after {
+        display: block;
+        content: '';
         position: absolute;
-        bottom: 1rem;
-        left: 1rem;
-
-        &__title {
-            font-size: 2rem;
-            display: block;
-            max-width: 50%;
-            color: #FFB301;
-            margin: 0 0 1rem 0;
-            padding: 0;
-            line-height: 2rem;
-        }
-        &__text {
-            padding: 0;
-            margin: 0;
-        }
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(transparent, #000);
+        border-radius: 1rem;
     }
+
+    &--magenta {
+        background-image: linear-gradient(#A32A92, #500846);
+    }
+
+    &--orange {
+        background-image: linear-gradient(#E58E2A, #711056);
+    }
+
+    &--red {
+        background-image: linear-gradient(#911B16, #E02D3E);
+    }
+
+    &--purple {
+        background-image: linear-gradient(#B690E0, #251853);
+    }
+
+    &--green {
+        background-image: linear-gradient(#96F6E2, #0B7753);
+    }
+
+}
+
+.characters__list-item__description {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+
+    &__title {
+        font-size: 2rem;
+        display: block;
+        max-width: 50%;
+        color: #FFB301;
+        margin: 0 0 1rem 0;
+        padding: 0;
+        line-height: 2rem;
+    }
+
+    &__text {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+.characters__list-controls {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
