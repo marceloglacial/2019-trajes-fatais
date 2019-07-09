@@ -35,6 +35,7 @@
     display: flex;
     overflow-x: scroll;
     overflow-y: hidden;
+    scroll-behavior: smooth;
     width: 100%;
     padding-left: 6%;
     padding-bottom: 1rem;
@@ -43,7 +44,12 @@
         background: transparent;
         height: 0;
     }
+
+    &--all {
+        flex-wrap: wrap;
+    }
 }
+
 
 .characters__list-item {
     position: relative;
