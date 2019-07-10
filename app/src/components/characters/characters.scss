@@ -1,40 +1,69 @@
+// Imports
+// ------------------------------------------------
+@import '../base/variables';
+@import '../base/mixins';
+
 .characters {
     padding-bottom: 4rem;
 }
 
 .characters__header {
-    padding-top: 4rem;
-    padding-bottom: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+
+    @include mq('large') {
+        padding-top: 4rem;
+        padding-bottom: 2rem;
+    }
 
     &::before {
         display: block;
         content: '';
-        width: 60px;
-        height: 60px;
+        width: 24px;
+        height: 24px;
         background: url('../images/characters-title-icon.svg') no-repeat;
+        background-size: contain;
         float: left;
         margin-right: 10px;
+
+        @include mq('large') {
+            width: 60px;
+            height: 60px;
+        }
     }
 }
 
 .characters__title {
-    font-size: 40px;
+    font-size: 1rem;
     font-weight: bold;
     color: #FFF;
     margin: 0;
     padding: 0;
+
+    @include mq('large') {
+        font-size: 40px;
+    }
 }
 
 .characters__subtitle {
-    color: #D0971D;
-    margin: 0;
-    padding: 0;
+    display: none;
+
+    @include mq('large') {
+        display: inline-block;
+        color: #D0971D;
+        margin: 0;
+        padding: 0;
+    }
 }
 
 .characters__list {
     position: relative;
-    height: 371px;
+    height: 140px;
     overflow: hidden;
+
+    @include mq('large') {
+        height: 371px;
+    }
 
     &--all {
         height: unset;
@@ -46,6 +75,7 @@
     position: absolute;
     display: flex;
     width: 100%;
+    opacity: 0;
     transition: all 0.3s ease-in-out;
 
     &--all {
@@ -55,16 +85,21 @@
     }
 }
 
-
 .characters__list-item {
     position: relative;
-    min-width: 334px;
-    height: 371px;
+    min-width: 118px;
+    height: 131px;
     margin-right: 1rem;
     margin-bottom: 1rem;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     transition: all 0.2s ease-in-out;
     scroll-snap-align: start;
+
+    @include mq('large') {
+        min-width: 334px;
+        height: 371px;
+        border-radius: 1rem;
+    }
 
     &:hover {
         opacity: 0.7;
@@ -79,7 +114,11 @@
         width: 100%;
         height: 100%;
         background-image: linear-gradient(transparent, #000);
-        border-radius: 1rem;
+        border-radius: 0.5rem;
+
+        @include mq('large') {
+            border-radius: 1rem;
+        }
     }
 
     &--magenta {
@@ -105,31 +144,51 @@
 
 .characters__list-item__description {
     position: absolute;
-    bottom: 20px;
-    left: 20px;
+    bottom: 8px;
+    left: 8px;
+
+    @include mq('large') {
+        bottom: 20px;
+        left: 20px;
+    }
 
     &__title {
-        font-size: 2rem;
+        font-size: 1rem;
         display: block;
         max-width: 50%;
         color: #FFB301;
-        margin: 0 0 1rem 0;
+        margin: 0;
         padding: 0;
-        line-height: 2rem;
+        line-height: 1rem;
+
+        @include mq('large') {
+            font-size: 2rem;
+            line-height: 2rem;
+            margin: 0 0 1rem 0;
+        }
     }
 
     &__text {
         padding: 0;
         margin: 0;
+        font-size: 10px;
+
+        @include mq('large') {
+            font-size: 1rem;
+        }
     }
 }
 
 .characters__list-controls {
     width: 100%;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: flex-end;
     padding-top: 1rem;
+
+    @include mq('large') {
+        display: flex;
+    }
 }
 
 .characters__list-controls__item {
@@ -178,19 +237,141 @@
     }
 }
 
+// Character Info (modal)
 .characters__list-modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    display: none;
-    background: rgba(0, 0, 0, .9);
-    z-index: 200;
+    display: flex;
+    background: #2D2D2D;
+    z-index: -1;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
 
     &--open {
         display: flex;
-        align-items: center;
-        justify-content: center;
+        transition: all 0.3s ease-in-out;
+        opacity: 1;
+        z-index: 200;
     }
+}
+
+.characters__list-modal__container {
+    max-width: 80%;
+    min-height: 80vh;
+    background: black;
+    box-shadow: 0px 3px 15px black;
+    border-radius: 1rem;
+    padding: 55px 120px;
+    position: relative;
+    transform: translateY(50%);
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+}
+
+.characters__list-modal--open .characters__list-modal__container {
+    transform: translateY(0);
+}
+
+.characters__list-modal__header {
+    max-width: 35%;
+
+    &-title {
+        font-size: 64px;
+        line-height: 64px;
+        padding: 0;
+        margin: 0;
+    }
+
+    &-subtitle {
+        color: #FFB301;
+        font-size: 24px;
+        padding: 1rem 0 2rem 0;
+        margin: 0;
+    }
+}
+
+.characters__list-modal__description {
+    max-width: 50%;
+    font-size: 14px;
+    line-height: 26px;
+}
+
+.characters__list-modal__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.characters__list-modal__close {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    font-size: 0;
+    width: 2rem;
+    height: 2rem;
+    background: url('../images/btn-close.svg') no-repeat center center;
+
+    &:hover {
+        cursor: pointer;
+        opacity: 0.7;
+    }
+}
+
+.characters__list-modal__skills__main-title {
+    font-size: 14px;
+    color: #D0971D;
+    margin: 0;
+    padding: 40px 0 4px 0;
+}
+.characters__list-modal__skills__main-description {
+    margin: 0;
+    padding: 0 0 1rem 0;
+}
+
+.characters__list-modal__skills__secondary__item {
+    max-width: 45%;
+}
+
+// Skills bar
+.characters__list-modal__skills__secondary__item progress,
+.characters__list-modal__skills__secondary__item progress::-webkit-progress-bar {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+
+    width: 218px;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #5A5761;
+    color: rgb(20, 240, 221);
+}
+
+.characters__list-modal__skills__secondary__item progress::-webkit-progress-value {
+    background-color: #D0971D;
+    border-radius: 4px;
+}
+
+.characters__list-modal__skills__secondary__item progress::-moz-progress-bar {
+    background-color: #5A5761;
+    border-radius: 4px;
+}
+
+.characters__list-modal__skills__secondary {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 50%;
+    justify-content: space-between;
+}
+.characters__list-modal__skills__secondary__item {
+    padding-bottom: 24px;
+}
+.characters__list-modal__skills__secondary__item-title {
+    padding: 0 0 4px 0;
+    margin: 0;
 }
