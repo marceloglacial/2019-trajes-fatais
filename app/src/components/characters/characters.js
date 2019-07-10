@@ -2,43 +2,62 @@
 // Characters Scroll controls
 //--------------------------------------------------------------
 
+let parent = $('.characters__list');
 let container = $('.characters__list-items');
-let items = $('.characters__list-items').length;
+let containerWidth = container.outerWidth();
+let header = $('.characters__header').offset();
+let containerInitialPosition = header.left + 16;
+let items = $('.characters__list-item').length;
 let item = $('.characters__list-item');
+let itemWidth = item.outerWidth() + 16;
+let itemsVisible = Math.floor(containerWidth / itemWidth);
+let controls = $('.characters__list-controls');
 let btn = $('.characters__list-controls__item');
 let prev = $('.characters__list-controls__item--prev');
 let next = $('.characters__list-controls__item--next');
 let all = $('.characters__list-controls__item--all');
 let modal = $('.characters__list-modal');
-let scrollPosition = 0;
+let currentSlide = 1;
+let maxScroll = Math.ceil(items / itemsVisible)
+let slideOffset = itemWidth * itemsVisible;
+
+// Initi
+$(document).ready(function(){
+    container.css({'transform': 'translate(' + containerInitialPosition + 'px)'});
+});
 
 // Remove link
 btn.on('click', function (e) {
     e.preventDefault();
 });
 
-// Get scroll position
-container.on('scroll', function () {
-    scrollPosition = $(this).scrollLeft();
-})
-
 // Scroll left
 prev.on('click', function (e) {
-    scrollPosition = scrollPosition - 300;
-    container.scrollLeft(scrollPosition);
+    container.css({
+        'transform': 'translate(' + containerInitialPosition + 'px)'
+    });
+    currentSlide = 1;
 });
 
 // Scroll right
 next.on('click', function (e) {
-    scrollPosition = scrollPosition + 300;
-    container.scrollLeft(scrollPosition);
+    if(currentSlide < maxScroll) {
+        container.css({
+            'transform': 'translate(-' + ((currentSlide * slideOffset) - containerInitialPosition) + 'px)'
+        });
+        currentSlide++;
+    }
 });
 
 // Display all characters
 all.on('click', function (e) {
-    container.fadeOut(200);
+    controls.fadeOut()
+    parent.fadeOut(200);
+    container.css({'transform': 'translate(0px)'});
     setTimeout(() => {
-        container.toggleClass('characters__list-items--all').fadeIn()
+        container.addClass('characters__list-items--all')
+        container.addClass('container')
+        parent.addClass('characters__list--all').fadeIn()
     }, 200);
 });
 
