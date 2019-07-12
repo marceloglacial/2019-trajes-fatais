@@ -7,7 +7,7 @@
     padding-bottom: 4rem;
 }
 
-.characters__header {
+.characters-header {
     padding-top: 2rem;
     padding-bottom: 1rem;
 
@@ -33,7 +33,7 @@
     }
 }
 
-.characters__title {
+.characters-header__title {
     font-size: 1rem;
     font-weight: bold;
     color: #FFF;
@@ -45,7 +45,7 @@
     }
 }
 
-.characters__subtitle {
+.characters-header__subtitle {
     display: none;
 
     @include mq('large') {
@@ -56,7 +56,7 @@
     }
 }
 
-.characters__list {
+.characters-list {
     position: relative;
     height: 140px;
     overflow: hidden;
@@ -71,7 +71,7 @@
     }
 }
 
-.characters__list-items {
+.characters-list__items {
     position: absolute;
     display: flex;
     width: 100%;
@@ -85,7 +85,7 @@
     }
 }
 
-.characters__list-item {
+.characters-list__item {
     position: relative;
     min-width: 118px;
     height: 131px;
@@ -142,7 +142,7 @@
     }
 }
 
-.characters__list-item__description {
+.characters-list__item-description {
     position: absolute;
     bottom: 8px;
     left: 8px;
@@ -179,7 +179,7 @@
     }
 }
 
-.characters__list-controls {
+.characters-list-controls {
     width: 100%;
     display: none;
     align-items: center;
@@ -191,7 +191,7 @@
     }
 }
 
-.characters__list-controls__item {
+.characters-list-controls__item {
     a {
         height: 64px;
         min-width: 64px;
@@ -237,8 +237,8 @@
     }
 }
 
-// Character Info (modal)
-.characters__list-modal {
+// Card (modal)
+.characters-list-modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -246,6 +246,7 @@
     height: 100vh;
     display: flex;
     background: #2D2D2D;
+    background-size: contain;
     z-index: -1;
     align-items: center;
     justify-content: center;
@@ -258,27 +259,52 @@
         opacity: 1;
         z-index: 200;
     }
+
+    @include mq('medium', 'max') {
+        overflow: scroll;
+    }
 }
 
-.characters__list-modal__container {
+.characters-list-modal__container {
     max-width: 80%;
     min-height: 80vh;
     background: black;
     box-shadow: 0px 3px 15px black;
     border-radius: 1rem;
-    padding: 55px 120px;
+    padding: 55px 65px;
     position: relative;
     transform: translateY(50%);
     transition: all 0.4s ease-in-out;
     overflow: hidden;
+    background: url('../images/card-background.svg') no-repeat center right #120E1C;
+    background-size: contain;
+    display: flex;
+
+    @include mq('large', 'max') {
+        max-width: 100%;
+        min-height: 100vh;
+        border-radius: unset;
+        flex-direction: column;
+        position: unset;
+        transform: unset;
+        padding: 1rem;
+    }
 }
 
-.characters__list-modal--open .characters__list-modal__container {
+.characters-list-modal--open .characters-list-modal__container {
     transform: translateY(0);
 }
 
-.characters__list-modal__header {
-    max-width: 35%;
+// Character Info
+.characters-list-modal__info {
+    max-width: 52%;
+    @include mq('small', 'max') {
+        max-width: unset;
+    }
+}
+
+.characters-list-modal__header {
+    max-width: 50%;
 
     &-title {
         font-size: 64px;
@@ -295,19 +321,13 @@
     }
 }
 
-.characters__list-modal__description {
-    max-width: 50%;
+.characters-list-modal__description {
+    max-width: 85%;
     font-size: 14px;
     line-height: 26px;
 }
 
-.characters__list-modal__image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-.characters__list-modal__close {
+.characters-list-modal__close {
     position: absolute;
     right: 2rem;
     top: 2rem;
@@ -322,56 +342,137 @@
     }
 }
 
-.characters__list-modal__skills__main-title {
+.characters-list-modal__skills__main-title {
     font-size: 14px;
     color: #D0971D;
     margin: 0;
     padding: 40px 0 4px 0;
 }
-.characters__list-modal__skills__main-description {
+
+.characters-list-modal__skills__main-description {
     margin: 0;
     padding: 0 0 1rem 0;
 }
 
-.characters__list-modal__skills__secondary__item {
-    max-width: 45%;
+// Skills bar
+.characters-list-modal__skills__secondary__item {
+    padding-bottom: 24px;
+    width: 45%;
 }
 
-// Skills bar
-.characters__list-modal__skills__secondary__item progress,
-.characters__list-modal__skills__secondary__item progress::-webkit-progress-bar {
+.characters-list-modal__skills__secondary__item progress,
+.characters-list-modal__skills__secondary__item progress::-webkit-progress-bar {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     border: none;
 
-    width: 218px;
+    width: 100%;
     height: 4px;
     border-radius: 4px;
     background-color: #5A5761;
     color: rgb(20, 240, 221);
 }
 
-.characters__list-modal__skills__secondary__item progress::-webkit-progress-value {
+.characters-list-modal__skills__secondary__item progress::-webkit-progress-value {
     background-color: #D0971D;
     border-radius: 4px;
 }
 
-.characters__list-modal__skills__secondary__item progress::-moz-progress-bar {
+.characters-list-modal__skills__secondary__item progress::-moz-progress-bar {
     background-color: #5A5761;
     border-radius: 4px;
 }
 
-.characters__list-modal__skills__secondary {
+.characters-list-modal__skills__secondary {
     display: flex;
     flex-wrap: wrap;
-    max-width: 50%;
     justify-content: space-between;
 }
-.characters__list-modal__skills__secondary__item {
-    padding-bottom: 24px;
-}
-.characters__list-modal__skills__secondary__item-title {
+
+.characters-list-modal__skills__secondary__item-title {
     padding: 0 0 4px 0;
     margin: 0;
+}
+
+// Gallery 
+.characters-list-modal__gallery {
+    display: flex;
+    width: 48%;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 2rem;
+    position: relative;
+}
+
+.characters-list-modal__gallery-items {
+    width: 100%;
+    height: calc(100% - 100px);
+    position: relative;
+}
+.characters-list-modal__gallery__item-main {
+    position: absolute;
+    left: 45%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: calc(100% - 4rem);
+    width: calc(100% - 4rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+
+    &--active {
+        left: 50%;
+        opacity: 1;
+    }
+
+    iframe {
+        max-width: 100%;
+        height: 200px;
+    }
+}
+
+.characters-list-modal__gallery-thumbnails {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    overflow-x: scroll;
+}
+
+.characters-list-modal__gallery-thumbnail {
+    position: relative;
+    height: 80px;
+    min-width: 80px;
+    overflow-y: hidden;
+    border: solid 2px #000000;
+    border-radius: 8px;
+
+    &:not(:last-child) {
+        margin-right: 1rem;
+    }
+
+    &--active {
+        border-color: #FFB301;
+    }
+
+    img {
+        height: 80px;
+        min-width: 80px;
+    }
+}
+.characters-list-modal__gallery-controls {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 85%;
+}
+
+.characters-list-modal__gallery-control {
+    width: 44px;
+    height: 44px;
+    background-color: rgba(142, 142, 142, 0.1)
 }

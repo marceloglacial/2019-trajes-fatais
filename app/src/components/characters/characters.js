@@ -2,22 +2,22 @@
 // Characters Scroll controls
 //--------------------------------------------------------------
 
-let parent = $('.characters__list');
-let container = $('.characters__list-items');
+let parent = $('.characters-list');
+let container = $('.characters-list__items');
 let containerWidth = container.outerWidth();
-let header = $('.characters__header').offset();
+let header = $('.characters-header').offset();
 let containerInitialPosition = header.left + 16;
-let items = $('.characters__list-item').length;
-let item = $('.characters__list-item');
+let items = $('.characters-list__item').length;
+let item = $('.characters-list__item');
 let itemWidth = item.outerWidth() + 16;
 let itemsVisible = Math.floor(containerWidth / itemWidth);
-let controls = $('.characters__list-controls');
-let btn = $('.characters__list-controls__item');
-let prev = $('.characters__list-controls__item--prev');
-let next = $('.characters__list-controls__item--next');
-let all = $('.characters__list-controls__item--all');
-let modal = $('.characters__list-modal');
-let modalClose = $('.characters__list-modal__close');
+let controls = $('.characters-list-controls');
+let btn = $('.characters-list-controls__item');
+let prev = $('.characters-list-controls__item--prev');
+let next = $('.characters-list-controls__item--next');
+let all = $('.characters-list-controls__item--all');
+let modal = $('.characters-list-modal');
+let modalClose = $('.characters-list-modal__close');
 let currentSlide = 1;
 let maxScroll = Math.ceil(items / itemsVisible)
 let slideOffset = itemWidth * itemsVisible;
@@ -86,27 +86,74 @@ all.on('click', function (e) {
         'transform': 'translate(0px)'
     });
     setTimeout(() => {
-        container.addClass('characters__list-items--all')
+        container.addClass('characters-list__items--all')
         container.addClass('container')
-        parent.addClass('characters__list--all').fadeIn()
+        parent.addClass('characters-list--all').fadeIn()
     }, 200);
 });
 
 // Open modal
 item.on('click', function (e) {
     e.preventDefault();
-    modal.addClass('characters__list-modal--open');
+    modal.addClass('characters-list-modal--open');
 })
 
 // Close modal
 modalClose.on('click', function (e) {
     e.preventDefault();
-    modal.removeClass('characters__list-modal--open');
+    modal.removeClass('characters-list-modal--open');
 })
 
 // Close modal on ESC
 window.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
-        modal.removeClass('characters__list-modal--open');
+        modal.removeClass('characters-list-modal--open');
     }
+});
+
+
+//--------------------------------------------------------------
+// Modal Gallery
+//--------------------------------------------------------------
+let modalGalleryItem = '.characters-list-modal__gallery__item-main';
+let modalGalleryItems = $(modalGalleryItem).length;
+let modalGalleyActiveClass = 'characters-list-modal__gallery__item-main--active';
+let modalThumbnail = '.characters-list-modal__gallery-thumbnail';
+let modalThumbnailActiveClass = 'characters-list-modal__gallery-thumbnail--active';
+let modalControlsPrev = '.characters-list-modal__gallery-control.btn-controls--prev';
+let modalControlsNext = '.characters-list-modal__gallery-control.btn-controls--next';
+
+// Reset first items
+$(modalGalleryItem + ':first-child').addClass(modalGalleyActiveClass);
+$(modalThumbnail + ':first-child').addClass(modalThumbnailActiveClass);
+
+
+// Set current state
+$(modalThumbnail).on('click', function() {
+    $(modalGalleryItem + ':nth('+ $(this).index() + ')').addClass(modalGalleyActiveClass).siblings().removeClass(modalGalleyActiveClass);
+    $(this).addClass(modalThumbnailActiveClass).siblings().removeClass(modalThumbnailActiveClass);
+});
+
+let modalSlide = 0;
+function modalChangeSlide(slide) {
+    $(modalGalleryItem + ':nth('+ slide + ')').addClass(modalGalleyActiveClass).siblings().removeClass(modalGalleyActiveClass);
+    $(modalThumbnail + ':nth('+ slide + ')').addClass(modalThumbnailActiveClass).siblings().removeClass(modalThumbnailActiveClass);
+};
+
+$(modalControlsPrev).on('click', function() {
+    if(modalSlide > 0) {
+        modalSlide--;
+    } else {
+        modalSlide = (modalGalleryItems - 1);
+    }
+    modalChangeSlide(modalSlide);
+});
+
+$(modalControlsNext).on('click', function() {
+    if(modalSlide < (modalGalleryItems - 1)) {
+        modalSlide++;
+    } else {
+        modalSlide = 0;
+    }
+    modalChangeSlide(modalSlide);
 });

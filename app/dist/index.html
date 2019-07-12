@@ -62,7 +62,7 @@
                     <source media="(max-width: 567px)" srcset="images/logo.png">
                     <source media="(min-width: 568px)" srcset="images/logo@2x.png">
                     <source media="(min-width: 767px)" srcset="images/logo@3x.png">
-                    <img src="images/logo.png" alt="Site Logo">
+                    <img class="img-responsive" src="images/logo.png" alt="Site Logo">
                 </picture>
             </a>
             <nav aria-labelledby="primary-nav-label" class="main-navbar main-navbar--primary">
@@ -87,7 +87,7 @@
     
                 <div id="mobile-nav-label" hidden>Mobile</div>
                 <a href="/" title="Go to home page" class="site-logo " tabindex="-1">
-                    <img src="images/logo.png" srcset="images/logo@2x.png 1000w, images/logo@3x.png 2000w" alt="Site logo"
+                    <img class="img-responsive" src="images/logo.png" srcset="images/logo@2x.png 1000w, images/logo@3x.png 2000w" alt="Site logo"
                         width="220" height="140">
                 </a>
                 <ul class="mobile-navbar-items row">
@@ -99,13 +99,13 @@
                 </ul>
     
                 <ul class="mobile-navbar-items mobile-navbar-items--social">
-                    <li class="mobile-navbar-item--social icon-facebook"><a href="#" tabindex="-1"><img
+                    <li class="mobile-navbar-item--social icon-facebook"><a href="#" tabindex="-1"><img class="img-responsive"
                                 src="images/facebook-mobile.svg" alt="Facebook"></a></li>
-                    <li class="mobile-navbar-item--social icon-instagram"><a href="#" tabindex="-1"><img
+                    <li class="mobile-navbar-item--social icon-instagram"><a href="#" tabindex="-1"><img class="img-responsive"
                                 src="images/instagram-mobile.svg" alt="Instagram"></a></li>
-                    <li class="mobile-navbar-item--social icon-twitter"><a href="#" tabindex="-1"><img
+                    <li class="mobile-navbar-item--social icon-twitter"><a href="#" tabindex="-1"><img class="img-responsive"
                                 src="images/twitter-mobile.svg" alt="Twitter"></a></li>
-                    <li class="mobile-navbar-item--social icon-youtube"><a href="#" tabindex="-1"><img
+                    <li class="mobile-navbar-item--social icon-youtube"><a href="#" tabindex="-1"><img class="img-responsive"
                                 src="images/youtube-mobile.svg" alt="YouTube"></a></li>
                 </ul>
             </nav>
@@ -139,9 +139,9 @@
                     </div>
                     <div class="hero-slide-image">
                         <picture>
-                            <source media="(max-width: 567px)" srcset="images/slide-01.jpg">
-                            <source media="(min-width: 568px)" srcset="images/slide-01@3x.jpg">
-                            <img src="images/slide-01.jpg" alt="Slide 01">
+                            <source media="(max-width: 567px)" srcset="uploads/slide-01.jpg">
+                            <source media="(min-width: 568px)" srcset="uploads/slide-01@3x.jpg">
+                            <img class="img-responsive" src="uploads/slide-01.jpg" alt="Slide 01">
                         </picture>
                     </div>
                 </article>
@@ -164,9 +164,9 @@
                     </div>
                     <div class="hero-slide-image">
                         <picture>
-                            <source media="(max-width: 567px)" srcset="images/slide-02.jpg">
-                            <source media="(min-width: 568px)" srcset="images/slide-02@3x.jpg">
-                            <img src="images/slide-01.jpg" alt="Slide 01">
+                            <source media="(max-width: 567px)" srcset="uploads/slide-02.jpg">
+                            <source media="(min-width: 568px)" srcset="uploads/slide-02@3x.jpg">
+                            <img class="img-responsive" src="uploads/slide-01.jpg" alt="Slide 01">
                         </picture>
                     </div>
                 </article>
@@ -188,9 +188,9 @@
                     </div>
                     <div class="hero-slide-image">
                         <picture>
-                            <source media="(max-width: 567px)" srcset="images/slide-03.jpg">
-                            <source media="(min-width: 568px)" srcset="images/slide-03@3x.jpg">
-                            <img src="images/slide-03.jpg" alt="Slide 01">
+                            <source media="(max-width: 567px)" srcset="uploads/slide-03.jpg">
+                            <source media="(min-width: 568px)" srcset="uploads/slide-03@3x.jpg">
+                            <img class="img-responsive" src="uploads/slide-03.jpg" alt="Slide 01">
                         </picture>
                     </div>
                 </article>
@@ -203,194 +203,291 @@
             </div>
         </section>
         <section class="characters">
-            <div class="characters__header container">
-                <p class="characters__subtitle">Personagens</p>
-                <header class="characters__title">Os convidados</header>
+        
+            <!-- Title -->
+            <div class="characters-header container">
+                <p class="characters-header__subtitle">Personagens</p>
+                <header class="characters-header__title">Os convidados</header>
             </div>
-            <div class="characters__list">
-                <div class="characters__list-items">
-                    <div class="characters__list-item characters__list-item--magenta">
+            <!-- Title -->
+        
+            <!-- Character List -->
+            <div class="characters-list">
+                <div class="characters-list__items">
+        
+                    <!-- Character Card -->
+                    <div class="characters-list__item characters-list__item--magenta">
                         <a href="#">
                             <figure>
-                                <img srcset="images/personagem-01.png 1x, images/personagem-01@2x.png 1.5x, images/personagem-01@3x.png 2x"
-                                    src="images/personagem-01@3x.png" alt="personagem">
+                                <img class="img-responsive" srcset="uploads/personagem-01.png 1x, uploads/personagem-01@2x.png 1.5x, uploads/personagem-01@3x.png 2x"
+                                    src="uploads/personagem-01@3x.png" alt="personagem">
                             </figure>
-                            <figcaption class="characters__list-item__description">
-                                <h3 class="characters__list-item__description__title">Sarah Barcelos</h3>
-                                <p class="characters__list-item__description__text">Ornitorrinco</p>
+                            <figcaption class="characters-list__item-description">
+                                <h3 class="characters-list__item-description__title">Sarah Barcelos</h3>
+                                <p class="characters-list__item-description__text">Ornitorrinco</p>
                             </figcaption>
                         </a>
                     </div>
         
-                    <div class="characters__list-item characters__list-item--orange">
+                    <div class="characters-list__item characters-list__item--orange">
                         <a href="#">
                             <figure>
-                                <img srcset="images/personagem-02.png 1x, images/personagem-02@2x.png 1.5x, images/personagem-02@3x.png 2x"
-                                    src="images/personagem-02@3x.png" alt="personagem">
+                                <img class="img-responsive" srcset="uploads/personagem-02.png 1x, uploads/personagem-02@2x.png 1.5x, uploads/personagem-02@3x.png 2x"
+                                    src="uploads/personagem-02@3x.png" alt="personagem">
                             </figure>
-                            <figcaption class="characters__list-item__description">
-                                <h3 class="characters__list-item__description__title">Natália Clarimond</h3>
-                                <p class="characters__list-item__description__text">A fada</p>
+                            <figcaption class="characters-list__item-description">
+                                <h3 class="characters-list__item-description__title">Natália Clarimond</h3>
+                                <p class="characters-list__item-description__text">A fada</p>
                             </figcaption>
                         </a>
                     </div>
         
-                    <div class="characters__list-item characters__list-item--red">
+                    <div class="characters-list__item characters-list__item--red">
                         <a href="#">
                             <figure>
-                                <img srcset="images/personagem-03.png 1x, images/personagem-03@2x.png 1.5x, images/personagem-03@3x.png 2x"
-                                    src="images/personagem-03@3x.png" alt="personagem">
+                                <img class="img-responsive" srcset="uploads/personagem-03.png 1x, uploads/personagem-03@2x.png 1.5x, uploads/personagem-03@3x.png 2x"
+                                    src="uploads/personagem-03@3x.png" alt="personagem">
                             </figure>
-                            <figcaption class="characters__list-item__description">
-                                <h3 class="characters__list-item__description__title">Lourenço Sombra</h3>
-                                <p class="characters__list-item__description__text">O Cangaceiro</p>
+                            <figcaption class="characters-list__item-description">
+                                <h3 class="characters-list__item-description__title">Lourenço Sombra</h3>
+                                <p class="characters-list__item-description__text">O Cangaceiro</p>
                             </figcaption>
                         </a>
                     </div>
         
-                    <div class="characters__list-item characters__list-item--purple">
+                    <div class="characters-list__item characters-list__item--purple">
                         <a href="#">
                             <figure>
-                                <img srcset="images/personagem-04.png 1x, images/personagem-04@2x.png 1.5x, images/personagem-04@3x.png 2x"
-                                    src="images/personagem-04@3x.png" alt="personagem">
+                                <img class="img-responsive" srcset="uploads/personagem-04.png 1x, uploads/personagem-04@2x.png 1.5x, uploads/personagem-04@3x.png 2x"
+                                    src="uploads/personagem-04@3x.png" alt="personagem">
                             </figure>
-                            <figcaption class="characters__list-item__description">
-                                <h3 class="characters__list-item__description__title">Lucy Fernandez</h3>
-                                <p class="characters__list-item__description__text">A Demônia</p>
+                            <figcaption class="characters-list__item-description">
+                                <h3 class="characters-list__item-description__title">Lucy Fernandez</h3>
+                                <p class="characters-list__item-description__text">A Demônia</p>
                             </figcaption>
                         </a>
                     </div>
         
-                    <div class="characters__list-item characters__list-item--green">
+                    <div class="characters-list__item characters-list__item--green">
                         <a href="#">
                             <figure>
-                                <img srcset="images/personagem-05.png 1x, images/personagem-05@2x.png 1.5x, images/personagem-05@3x.png 2x"
-                                    src="images/personagem-05@3x.png" alt="personagem">
+                                <img class="img-responsive" srcset="uploads/personagem-05.png 1x, uploads/personagem-05@2x.png 1.5x, uploads/personagem-05@3x.png 2x"
+                                    src="uploads/personagem-05@3x.png" alt="personagem">
                             </figure>
-                            <figcaption class="characters__list-item__description">
-                                <h3 class="characters__list-item__description__title">Cristiano Martins</h3>
-                                <p class="characters__list-item__description__text">O Anjo</p>
-                            </figcaption>
-                        </a>
-                    </div>
-                    <div class="characters__list-item characters__list-item--magenta">
-                        <a href="#">
-                            <figure>
-                                <img srcset="images/personagem-01.png 1x, images/personagem-01@2x.png 1.5x, images/personagem-01@3x.png 2x"
-                                    src="images/personagem-01@3x.png" alt="personagem">
-                            </figure>
-                            <figcaption class="characters__list-item__description">
-                                <h3 class="characters__list-item__description__title">Sarah Barcelos</h3>
-                                <p class="characters__list-item__description__text">Ornitorrinco</p>
+                            <figcaption class="characters-list__item-description">
+                                <h3 class="characters-list__item-description__title">Cristiano Martins</h3>
+                                <p class="characters-list__item-description__text">O Anjo</p>
                             </figcaption>
                         </a>
                     </div>
         
-                    <div class="characters__list-item characters__list-item--orange">
+                    <div class="characters-list__item characters-list__item--magenta">
                         <a href="#">
                             <figure>
-                                <img srcset="images/personagem-02.png 1x, images/personagem-02@2x.png 1.5x, images/personagem-02@3x.png 2x"
-                                    src="images/personagem-02@3x.png" alt="personagem">
+                                <img class="img-responsive" srcset="uploads/personagem-01.png 1x, uploads/personagem-01@2x.png 1.5x, uploads/personagem-01@3x.png 2x"
+                                    src="uploads/personagem-01@3x.png" alt="personagem">
                             </figure>
-                            <figcaption class="characters__list-item__description">
-                                <h3 class="characters__list-item__description__title">Natália Clarimond</h3>
-                                <p class="characters__list-item__description__text">A fada</p>
+                            <figcaption class="characters-list__item-description">
+                                <h3 class="characters-list__item-description__title">Sarah Barcelos</h3>
+                                <p class="characters-list__item-description__text">Ornitorrinco</p>
                             </figcaption>
                         </a>
                     </div>
         
-                    <div class="characters__list-item characters__list-item--red">
+                    <div class="characters-list__item characters-list__item--orange">
                         <a href="#">
                             <figure>
-                                <img srcset="images/personagem-03.png 1x, images/personagem-03@2x.png 1.5x, images/personagem-03@3x.png 2x"
-                                    src="images/personagem-03@3x.png" alt="personagem">
+                                <img class="img-responsive" srcset="uploads/personagem-02.png 1x, uploads/personagem-02@2x.png 1.5x, uploads/personagem-02@3x.png 2x"
+                                    src="uploads/personagem-02@3x.png" alt="personagem">
                             </figure>
-                            <figcaption class="characters__list-item__description">
-                                <h3 class="characters__list-item__description__title">Lourenço Sombra</h3>
-                                <p class="characters__list-item__description__text">O Cangaceiro</p>
+                            <figcaption class="characters-list__item-description">
+                                <h3 class="characters-list__item-description__title">Natália Clarimond</h3>
+                                <p class="characters-list__item-description__text">A fada</p>
                             </figcaption>
                         </a>
                     </div>
         
-                    <div class="characters__list-item characters__list-item--purple">
+                    <div class="characters-list__item characters-list__item--red">
                         <a href="#">
                             <figure>
-                                <img srcset="images/personagem-04.png 1x, images/personagem-04@2x.png 1.5x, images/personagem-04@3x.png 2x"
-                                    src="images/personagem-04@3x.png" alt="personagem">
+                                <img class="img-responsive" srcset="uploads/personagem-03.png 1x, uploads/personagem-03@2x.png 1.5x, uploads/personagem-03@3x.png 2x"
+                                    src="uploads/personagem-03@3x.png" alt="personagem">
                             </figure>
-                            <figcaption class="characters__list-item__description">
-                                <h3 class="characters__list-item__description__title">Lucy Fernandez</h3>
-                                <p class="characters__list-item__description__text">A Demônia</p>
+                            <figcaption class="characters-list__item-description">
+                                <h3 class="characters-list__item-description__title">Lourenço Sombra</h3>
+                                <p class="characters-list__item-description__text">O Cangaceiro</p>
                             </figcaption>
                         </a>
                     </div>
         
-                    <div class="characters__list-item characters__list-item--green">
+                    <div class="characters-list__item characters-list__item--purple">
                         <a href="#">
                             <figure>
-                                <img srcset="images/personagem-05.png 1x, images/personagem-05@2x.png 1.5x, images/personagem-05@3x.png 2x"
-                                    src="images/personagem-05@3x.png" alt="personagem">
+                                <img class="img-responsive" srcset="uploads/personagem-04.png 1x, uploads/personagem-04@2x.png 1.5x, uploads/personagem-04@3x.png 2x"
+                                    src="uploads/personagem-04@3x.png" alt="personagem">
                             </figure>
-                            <figcaption class="characters__list-item__description">
-                                <h3 class="characters__list-item__description__title">Cristiano Martins</h3>
-                                <p class="characters__list-item__description__text">O Anjo</p>
+                            <figcaption class="characters-list__item-description">
+                                <h3 class="characters-list__item-description__title">Lucy Fernandez</h3>
+                                <p class="characters-list__item-description__text">A Demônia</p>
+                            </figcaption>
+                        </a>
+                    </div>
+        
+                    <div class="characters-list__item characters-list__item--green">
+                        <a href="#">
+                            <figure>
+                                <img class="img-responsive" srcset="uploads/personagem-05.png 1x, uploads/personagem-05@2x.png 1.5x, uploads/personagem-05@3x.png 2x"
+                                    src="uploads/personagem-05@3x.png" alt="personagem">
+                            </figure>
+                            <figcaption class="characters-list__item-description">
+                                <h3 class="characters-list__item-description__title">Cristiano Martins</h3>
+                                <p class="characters-list__item-description__text">O Anjo</p>
                             </figcaption>
                         </a>
                     </div>
                 </div>
+                <!-- /Container -->
+            </div>
+            <!-- /Character List -->
+        
+            <!-- Slider Controllers -->
+            <div class="characters-list-controls container">
+                <div class="characters-list-controls__item characters-list-controls__item--prev"><a href="#">Anterior</a>
+                </div>
+                <div class="characters-list-controls__item characters-list-controls__item--next"><a href="#">Proximo</a></div>
+                <div class="characters-list-controls__item characters-list-controls__item--all"><a href="#">Ver todos</a>
+                </div>
             </div>
         
-            <div class="characters__list-controls container">
-                <div class="characters__list-controls__item characters__list-controls__item--prev"><a href="#">Anterior</a>
-                </div>
-                <div class="characters__list-controls__item characters__list-controls__item--next"><a href="#">Proximo</a></div>
-                <div class="characters__list-controls__item characters__list-controls__item--all"><a href="#">Ver todos</a>
-                </div>
-            </div>
+            <!-- Modal -->
+            <div class="characters-list-modal characters-list-modal--open">
+                <div class="characters-list-modal__container">
+                    <!-- Close button -->
+                    <div class="characters-list-modal__close">Close</div>
         
-            <div class="characters__list-modal">
-                <div class="characters__list-modal__container">
-                    <div class="characters__list-modal__close">Close</div>
-                    <div class="characters__list-modal__header">
-                        <h2 class="characters__list-modal__header-title">Cristiano Martins</h2>
-                        <p class="characters__list-modal__header-subtitle">O Anjo</p>
-                    </div>
-                    <div class="characters__list-modal__description">
-                        <p>Moço comportado de fé verdadeira, Cristiano contrasta com Lucy como água e fogo, numa relação nem
-                            sempre agradável. Com o poder do traje, Cristiano acredita que recebeu um chamado celestial em meio
-                            ao pecado que sua cidade se encontra mergulhada. </p>
-                        <p>Suas asas podem ser pesadas no chão, mas também o fazem voar, ampliando seus combos aéreos e
-                            alcançando longas distâncias.</p>
-                    </div>
-                    <div class="characters__list-modal__image">
-                        <img src="images/slide-02@3x.jpg" alt="jlkjlkj">
-                    </div>
-                    <div class="characters__list-modal__skills">
-                        <div class="characters__list-modal__skills__main">
-                            <h3 class="characters__list-modal__skills__main-title">Poder principal</h3>
-                            <p class="characters__list-modal__skills__main-description">Poder de vôo e chutes aéreos</p>
+                    <!-- Info -->
+                    <div class="characters-list-modal__info">
+                        <!-- Name -->
+                        <div class="characters-list-modal__header">
+                            <h2 class="characters-list-modal__header-title">Cristiano Martins</h2>
+                            <p class="characters-list-modal__header-subtitle">O Anjo</p>
                         </div>
-                        <div class="characters__list-modal__skills__secondary">
-                            <div class="characters__list-modal__skills__secondary__item">
-                                <h4 class="characters__list-modal__skills__secondary__item-title">Poder de ataque</h4>
-                                <progress value="40" max="100"></progress>
+        
+                        <!-- Descriptioon -->
+                        <div class="characters-list-modal__description">
+                            <p>Moço comportado de fé verdadeira, Cristiano contrasta com Lucy como água e fogo, numa relação nem
+                                sempre agradável. Com o poder do traje, Cristiano acredita que recebeu um chamado celestial em
+                                meio
+                                ao pecado que sua cidade se encontra mergulhada. </p>
+                            <p>Suas asas podem ser pesadas no chão, mas também o fazem voar, ampliando seus combos aéreos e
+                                alcançando longas distâncias.</p>
+                        </div>
+        
+                        <!-- Skills -->
+                        <div class="characters-list-modal__skills">
+        
+                            <!-- Main Skills -->
+                            <div class="characters-list-modal__skills__main">
+                                <h3 class="characters-list-modal__skills__main-title">Poder principal</h3>
+                                <p class="characters-list-modal__skills__main-description">Poder de vôo e chutes aéreos</p>
                             </div>
-                            <div class="characters__list-modal__skills__secondary__item">
-                                <h4 class="characters__list-modal__skills__secondary__item-title">Velocidade</h4>
-                                <progress value="10" max="100"></progress>
-                            </div>
-                            <div class="characters__list-modal__skills__secondary__item">
-                                <h4 class="characters__list-modal__skills__secondary__item-title">Poder de Defesa</h4>
-                                <progress value="75" max="100"></progress>
-                            </div>
-                            <div class="characters__list-modal__skills__secondary__item">
-                                <h4 class="characters__list-modal__skills__secondary__item-title">Peso</h4>
-                                <progress value="30" max="100"></progress>
+        
+                            <!-- Secondary Skills -->
+                            <div class="characters-list-modal__skills__secondary">
+                                <div class="characters-list-modal__skills__secondary__item">
+                                    <h4 class="characters-list-modal__skills__secondary__item-title">Poder de ataque</h4>
+                                    <progress value="40" max="100"></progress>
+                                </div>
+                                <div class="characters-list-modal__skills__secondary__item">
+                                    <h4 class="characters-list-modal__skills__secondary__item-title">Velocidade</h4>
+                                    <progress value="10" max="100"></progress>
+                                </div>
+                                <div class="characters-list-modal__skills__secondary__item">
+                                    <h4 class="characters-list-modal__skills__secondary__item-title">Poder de Defesa</h4>
+                                    <progress value="75" max="100"></progress>
+                                </div>
+                                <div class="characters-list-modal__skills__secondary__item">
+                                    <h4 class="characters-list-modal__skills__secondary__item-title">Peso</h4>
+                                    <progress value="30" max="100"></progress>
+                                </div>
                             </div>
                         </div>
+                        <!-- /Skills -->
                     </div>
+                    <!-- /Info -->
+        
+                    <!-- Gallery -->
+                    <div class="characters-list-modal__gallery">
+                        <!-- Items -->
+                        <div class="characters-list-modal__gallery-items">
+        
+                            <div class="characters-list-modal__gallery-items__item">
+                                <div class="characters-list-modal__gallery__item-main">
+                                    <figure>
+                                        <img srcset="uploads/character-image.png 1x, uploads/character-image@2x.png 1.5x, uploads/character-image@3x.png 2x"
+                                        src="uploads/character-image@3x.png" alt="personagem" width="335" height="403">
+                                    </figure>
+                                </div>
+        
+                                <div class="characters-list-modal__gallery__item-main">
+                                    <figure>
+                                        <img srcset="uploads/character-image-02.png 1x, uploads/character-image-02@2x.png 1.5x, uploads/character-image-02@3x.png 2x"
+                                        src="uploads/character-image-02@3x.png" alt="personagem" width="335" height="403">
+                                    </figure>
+                                </div>
+        
+                                <div class="characters-list-modal__gallery__item-main">
+                                    <iframe width="560" height="315" src="https://www.youtube.com/embed/HOSQh4gQKP0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                </div>
+            
+                            </div>
+                        </div>
+                        <!-- /Items -->
+        
+                        <!-- Thumbnails -->
+                        <div class="characters-list-modal__gallery-thumbnails">
+                            <div class="characters-list-modal__gallery-thumbnail">
+                                <a href="#">
+                                    <figure>
+                                        <img srcset="uploads/thumb-cristiano.png 1x, uploads/thumb-cristiano@2x.png 1.5x, uploads/thumb-cristiano@3x.png 2x"
+                                        src="uploads/thumb-cristiano@3x.png" alt="personagem" width="80" height="80">
+                                    </figure>
+                                </a>
+                            </div>
+                            <div class="characters-list-modal__gallery-thumbnail">
+                                <a href="#">
+                                    <figure>
+                                        <img srcset="uploads/thumb-cristiano-b-side.png 1x, uploads/thumb-cristiano-b-side@2x.png 1.5x, uploads/thumb-cristiano-b-side@3x.png 2x"
+                                        src="uploads/thumb-cristiano-b-side@3x.png" alt="personagem" width="80" height="80">
+                                    </figure>
+                                </a>
+                            </div>
+                            <div class="characters-list-modal__gallery-thumbnail">
+                                <a href="#">
+                                    <figure>
+                                        <img srcset="uploads/thumb-video.png 1x, uploads/thumb-video@2x.png 1.5x, uploads/thumb-video@3x.png 2x"
+                                        src="uploads/thumb-video@3x.png" alt="personagem" width="118" height="80">
+                                    </figure>
+                                </a>
+                            </div>
+                            </div>
+                        <!-- /Thumbnails -->
+        
+                        <!-- Controls -->
+                        <div class="characters-list-modal__gallery-controls">
+                            <button class="characters-list-modal__gallery-control btn-controls btn-controls--prev">Anterior</button>
+                            <button class="characters-list-modal__gallery-control btn-controls btn-controls--next">Próximo</button>
+                        </div>
+                        <!-- /Controls -->
+                    </div>
+                    <!-- /Gallery -->
+        
                 </div>
+                <!-- /Container -->
+        
             </div>
+            <!-- /Modal -->
+        
         </section>
     </main>
     <script src="js/jquery.min.js"></script>
