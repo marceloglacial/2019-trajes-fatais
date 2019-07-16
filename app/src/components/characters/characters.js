@@ -5,7 +5,7 @@
 let parent = $('.characters-list');
 let container = $('.characters-list__items');
 let containerWidth = container.outerWidth();
-let header = $('.characters-header').offset();
+let header = $('.section-header--characters').offset();
 let containerInitialPosition = header.left + 16;
 let items = $('.characters-list__item').length;
 let item = $('.characters-list__item');

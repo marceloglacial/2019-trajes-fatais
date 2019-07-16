@@ -15,7 +15,7 @@
 }
 
 body {
-    background: $black-soft;
+    background: $black;
     color: $color-primary;
     font-family: $font-primary;
     font-weight: $weight-normal;
@@ -152,18 +152,19 @@ figure {
         text-decoration: none;
         cursor: pointer;
     }
+
     &--prev {
         background-image: url('../images/btn-left.svg');
     }
-    
+
     &--next {
         background-image: url('../images/btn-right.svg');
     }
-    
+
     &--all {
         font-size: 1rem;
         padding: 0 2rem;
-    
+
         &::after {
             display: block;
             content: '';
@@ -174,5 +175,54 @@ figure {
             background-size: contain;
             margin-left: 1rem;
         }
+    }
+}
+
+
+.section-header {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+
+    @include mq('large') {
+        padding-top: 4rem;
+        padding-bottom: 2rem;
+    }
+
+    &::before {
+        display: block;
+        content: '';
+        width: 24px;
+        height: 24px;
+        background-size: contain;
+        float: left;
+        margin-right: 10px;
+
+        @include mq('large') {
+            width: 60px;
+            height: 60px;
+        }
+    }
+}
+
+.section-header__title {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #FFF;
+    margin: 0;
+    padding: 0;
+
+    @include mq('large') {
+        font-size: 40px;
+    }
+}
+
+.section-header__subtitle {
+    display: none;
+
+    @include mq('large') {
+        display: inline-block;
+        color: #D0971D;
+        margin: 0;
+        padding: 0;
     }
 }
