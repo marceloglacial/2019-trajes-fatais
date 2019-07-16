@@ -9,12 +9,12 @@ $hero-slide-width: 50%;
 .hero-slides {
     position: relative;
     min-height: 100vh;
-        @include mq('medium') {
-            min-height: unset;
-        }
+
+    @include mq('large', 'max') {
+        min-height: unset;
+    }
 }
 
-// TO-DO: https://css-tricks.com/practical-css-scroll-snapping/
 .hero-slide {
     min-width: 100%;
     display: none;
@@ -42,6 +42,7 @@ $hero-slide-width: 50%;
         @include mq('super-large') {
             max-height: 1080px;
         }
+
         @include mq('4k') {
             max-height: 1380px;
         }
@@ -90,6 +91,7 @@ $hero-slide-width: 50%;
         }
     }
 }
+
 .hero-slider-control {
     position: relative;
 }
@@ -134,6 +136,7 @@ $hero-slide-width: 50%;
             opacity: 0.7;
         }
     }
+
     &-next {
         display: inline-block;
         background: url('../images/arrow-right.svg') no-repeat top left;

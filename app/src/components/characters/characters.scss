@@ -438,12 +438,13 @@
 
     @include mq('large', 'max') {
         position: absolute;
-        top: 1rem;
-        left: 1rem;
-        width: calc(100% - 2rem);
+        top: 0;
+        left: 0;
+        width: 100%;
         height: 400px;
         padding: 0;
-        background: url('../images/card-background-mobile.svg') no-repeat center 40px #120E1C;
+        background: url('../images/card-background-mobile.svg') no-repeat center -80px #120E1C;
+        background-size: cover;
     }
 }
 
@@ -540,6 +541,9 @@
     width: 100%;
     height: 85%;
 
+    @include mq('large', 'max') {
+        width: calc(100% - 2rem)
+    }
 }
 
 .characters-list-modal__gallery-control {
