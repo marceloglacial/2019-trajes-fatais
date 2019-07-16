@@ -32,3 +32,4 @@ node_modules
 # Project Files/Folders
 back-end/tmp
 credentials.json
+package-lock.json

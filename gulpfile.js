@@ -44,8 +44,8 @@ function styles(src, dest, minify) {
         .pipe(sass(options))
         .on('error', sass.logError)
         .pipe(autoprefixer())
-        // .pipe(sourcemaps.write())
         .pipe(concat('main.min.css'))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest(dest + 'css/'))
 };
 

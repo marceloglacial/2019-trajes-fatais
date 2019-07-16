@@ -8,6 +8,10 @@ $hero-slide-width: 50%;
 
 .hero-slides {
     position: relative;
+    min-height: 100vh;
+        @include mq('medium') {
+            min-height: unset;
+        }
 }
 
 // TO-DO: https://css-tricks.com/practical-css-scroll-snapping/
@@ -20,10 +24,12 @@ $hero-slide-width: 50%;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        height: 100vh;
+        height: 85vh;
+        min-height: unset;
         padding-bottom: 4rem;
 
         @include mq('medium') {
+            height: 100vh;
             max-height: 460px;
         }
 
