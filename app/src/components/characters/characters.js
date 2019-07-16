@@ -22,7 +22,7 @@ let currentSlide = 1;
 let maxScroll = Math.ceil(items / itemsVisible)
 let slideOffset = itemWidth * itemsVisible;
 
-// Initi
+// Initial states
 $(document).ready(function () {
     container.css({
         'transform': 'translate(' + containerInitialPosition + 'px)',

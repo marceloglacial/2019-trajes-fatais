@@ -9,6 +9,9 @@ $hero-slide-width: 50%;
 .hero-slides {
     position: relative;
     min-height: 100vh;
+        @include mq('medium') {
+            min-height: unset;
+        }
 }
 
 // TO-DO: https://css-tricks.com/practical-css-scroll-snapping/

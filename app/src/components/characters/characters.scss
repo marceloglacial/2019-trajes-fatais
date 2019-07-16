@@ -254,14 +254,9 @@
     opacity: 0;
 
     &--open {
-        display: flex;
         transition: all 0.3s ease-in-out;
         opacity: 1;
         z-index: 200;
-    }
-
-    @include mq('medium', 'max') {
-        overflow: scroll;
     }
 }
 
@@ -282,12 +277,16 @@
 
     @include mq('large', 'max') {
         max-width: 100%;
-        min-height: 100vh;
+        min-height: unset;
+        height: 100%;
         border-radius: unset;
         flex-direction: column;
         position: unset;
         transform: unset;
         padding: 1rem;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        background: #120E1C;
     }
 }
 
@@ -298,19 +297,30 @@
 // Character Info
 .characters-list-modal__info {
     max-width: 52%;
-    @include mq('small', 'max') {
-        max-width: unset;
+
+    @include mq('large', 'max') {
+        max-width: 100%;
+        padding-top: 400px;
     }
 }
 
 .characters-list-modal__header {
     max-width: 50%;
 
+    @include mq('large', 'max') {
+        max-width: 100%;
+    }
+
     &-title {
         font-size: 64px;
         line-height: 64px;
         padding: 0;
         margin: 0;
+
+        @include mq('large', 'max') {
+            font-size: 20px;
+            line-height: 32px;
+        }
     }
 
     &-subtitle {
@@ -318,6 +328,11 @@
         font-size: 24px;
         padding: 1rem 0 2rem 0;
         margin: 0;
+
+        @include mq('large', 'max') {
+            font-size: 16px;
+            padding: 0 0 1rem 0;
+        }
     }
 }
 
@@ -325,6 +340,10 @@
     max-width: 85%;
     font-size: 14px;
     line-height: 26px;
+
+    @include mq('large', 'max') {
+        max-width: 100%;
+    }
 }
 
 .characters-list-modal__close {
@@ -335,10 +354,19 @@
     width: 2rem;
     height: 2rem;
     background: url('../images/btn-close.svg') no-repeat center center;
+    z-index: 100;
 
     &:hover {
         cursor: pointer;
         opacity: 0.7;
+    }
+
+    @include mq('large', 'max') {
+        right: 1rem;
+        top: 1rem;
+        height: 25px;
+        width: 25px;
+        background-size: contain;
     }
 }
 
@@ -358,6 +386,10 @@
 .characters-list-modal__skills__secondary__item {
     padding-bottom: 24px;
     width: 45%;
+
+    @include mq('large', 'max') {
+        width: 90%;
+    }
 }
 
 .characters-list-modal__skills__secondary__item progress,
@@ -403,13 +435,29 @@
     justify-content: center;
     padding: 0 2rem;
     position: relative;
+
+    @include mq('large', 'max') {
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        width: calc(100% - 2rem);
+        height: 400px;
+        padding: 0;
+        background: url('../images/card-background-mobile.svg') no-repeat center 40px #120E1C;
+    }
 }
 
 .characters-list-modal__gallery-items {
     width: 100%;
     height: calc(100% - 100px);
     position: relative;
+    z-index: 1;
+
+    @include mq('large', 'max') {
+        width: 250px;
+    }
 }
+
 .characters-list-modal__gallery__item-main {
     position: absolute;
     left: 45%;
@@ -431,6 +479,10 @@
     iframe {
         max-width: 100%;
         height: 200px;
+
+        @include mq('large', 'max') {
+            height: 120px;
+        }
     }
 }
 
@@ -439,15 +491,29 @@
     width: 100%;
     display: flex;
     overflow-x: scroll;
+
+    @include mq('large', 'max') {
+        height: 50px;
+        justify-content: center;
+    }
 }
 
 .characters-list-modal__gallery-thumbnail {
-    position: relative;
-    height: 80px;
-    min-width: 80px;
-    overflow-y: hidden;
     border: solid 2px #000000;
     border-radius: 8px;
+    height: 80px;
+    width: 80px;
+    position: relative;
+    overflow: hidden;
+
+    @include mq('large', 'max') {
+        height: 50px;
+        width: 50px;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
 
     &:not(:last-child) {
         margin-right: 1rem;
@@ -458,10 +524,14 @@
     }
 
     img {
-        height: 80px;
-        min-width: 80px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
     }
+
 }
+
 .characters-list-modal__gallery-controls {
     position: absolute;
     display: flex;
@@ -469,10 +539,16 @@
     justify-content: space-between;
     width: 100%;
     height: 85%;
+
 }
 
 .characters-list-modal__gallery-control {
     width: 44px;
     height: 44px;
-    background-color: rgba(142, 142, 142, 0.1)
+    background-color: rgba(142, 142, 142, 0.1);
+
+    @include mq('large', 'max') {
+        height: 29px;
+        width: 29px;
+    }
 }
