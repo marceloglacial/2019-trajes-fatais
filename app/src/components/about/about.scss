@@ -1,0 +1,40 @@
+// Imports
+// ------------------------------------------------
+@import '../base/variables';
+@import '../base/mixins';
+
+.about {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    padding-top: 4rem;
+    overflow: hidden;
+
+    .section-header--about::before {
+        background: url('../images/about-title-icon.svg') no-repeat;
+    }
+
+    .section-image {
+        width: 50%;
+        flex-shrink: 1;
+        @include mq('large', 'max') {
+            width: 100%;
+        }
+    
+    }
+    .section-info {
+        width: 50%;
+        padding: 0 6rem;
+        @include mq('large', 'max') {
+            width: 100%;
+        }
+    }
+}
+
+.about-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
