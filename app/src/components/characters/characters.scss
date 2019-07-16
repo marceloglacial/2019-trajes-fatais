@@ -9,6 +9,7 @@
 
 .section-header--characters::before {
     background: url('../images/characters-title-icon.svg') no-repeat;
+    background-size: contain;
 }
 
 .characters-list {

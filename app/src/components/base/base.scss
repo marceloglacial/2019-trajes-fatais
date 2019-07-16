@@ -22,11 +22,6 @@ body {
     font-size: $size-16;
 }
 
-main {
-    max-width: 1440px;
-    margin: 0 auto;
-}
-
 h1,
 h2,
 h3,
@@ -157,18 +152,19 @@ figure {
         text-decoration: none;
         cursor: pointer;
     }
+
     &--prev {
         background-image: url('../images/btn-left.svg');
     }
-    
+
     &--next {
         background-image: url('../images/btn-right.svg');
     }
-    
+
     &--all {
         font-size: 1rem;
         padding: 0 2rem;
-    
+
         &::after {
             display: block;
             content: '';
