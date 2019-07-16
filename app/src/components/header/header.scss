@@ -8,7 +8,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 999999;
+    z-index: 100;
     
     .container {
         display: flex;
@@ -63,7 +63,7 @@
         left: 0;
         width: 100vw;
         height: 100vh;
-        z-index: 1000;
+        z-index: 100;
         background: white;
         text-align: center;
         padding: 3rem 0;
