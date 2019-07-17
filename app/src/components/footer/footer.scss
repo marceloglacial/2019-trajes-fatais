@@ -1,0 +1,60 @@
+// Imports
+// ------------------------------------------------
+@import '../base/variables';
+@import '../base/mixins';
+
+.footer {
+    background: $blue;
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 25px 0;
+    }
+
+    &-center {
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    &-extra {
+        text-align: center;
+        background: $black;
+        padding: 2rem 1rem;
+    }
+
+    &-center,
+    &-right, 
+    &-extra {
+        @include mq('large', 'max') {
+            display: none;
+        }
+    }
+
+
+    ul {
+        padding: 0;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        li {
+            padding-right: 1rem;
+        }
+    }
+
+    a {
+        color: #3B5895;
+        transition: all 0.3s ease-in-out;
+        font-size: 18px;
+
+        &:hover {
+            text-decoration: underline;
+            color: $white;
+            opacity: 0.7;
+        }
+    }
+}
