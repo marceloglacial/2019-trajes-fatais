@@ -1,4 +1,4 @@
-# [WIP] Trajes Fatais (2019)
+# Trajes Fatais (2019)
 Front-end Development of the brazilian game's website.
 
 ## Features
@@ -43,3 +43,7 @@ npm install
 
 - <a href="https://xd.adobe.com/spec/30b63a57-ffbf-4cec-55f8-2f2ea0d8e9e3-4687/">Desktop</a>
 - <a href="https://xd.adobe.com/spec/58896dae-06f4-45c4-7cd0-2ac3c6817191-2eb8/">Mobile</a>
+
+### Screenshot
+
+<img src="docs/screenshot-01.jpg">
