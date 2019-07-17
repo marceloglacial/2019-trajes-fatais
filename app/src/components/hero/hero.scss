@@ -8,7 +8,7 @@ $hero-slide-width: 50%;
 
 .hero-slides {
     position: relative;
-    min-height: 100vh;
+    min-height: 720px;
 
     @include mq('large', 'max') {
         min-height: unset;

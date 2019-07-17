@@ -7,9 +7,14 @@
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    min-height: 100vh;
-    padding-top: 4rem;
+    padding-top: 6rem;
+    padding-bottom: 6rem;
     overflow: hidden;
+
+    @include mq('large', 'max') {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
 
     .section-header--about {
         @include mq('large', 'max') {
@@ -74,10 +79,8 @@
                 display: none;
             }
         }
-
     }
 }
-
 
 .about-background {
     position: absolute;

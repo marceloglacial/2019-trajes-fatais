@@ -1,0 +1,101 @@
+// Imports
+// ------------------------------------------------
+@import '../base/variables';
+@import '../base/mixins';
+
+.awards {
+    position: relative;
+    background: #FFF;
+    padding: 6rem 0;
+    border-top: solid 5px $gold;
+    color: $black-blue;
+
+    @include mq('large', 'max') {
+        padding: 20px 0;
+    }
+
+    .awards-text-title {
+        font-size: 40px;
+        width: 50%;
+        margin: 0 0 16px 0;
+        line-height: 53px;
+
+        @include mq('large', 'max') {
+            font-size: 16px;
+            margin: 0 0 8px 0;
+            width: 100%;
+            line-height: 20px;
+        }
+    }
+
+    .awards-text-description {
+        color: $black;
+        line-height: 26px;
+        padding-bottom: 32px;
+
+        @include mq('large', 'max') {
+            line-height: 20px;
+            padding-bottom: 12px;
+            font-size: 12px;
+        }
+    }
+
+    .container {
+        display: flex;
+
+        @include mq('large', 'max') {
+            flex-direction: column;
+            justify-content: center;
+        }
+
+    }
+}
+
+.awards-text {
+    width: 40%;
+
+    @include mq('large', 'max') {
+        width: 100%;
+        padding-bottom: 65px;
+    }
+}
+
+.awards-badges {
+    width: 60%;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 2rem;
+
+    @include mq('large', 'max') {
+        width: 100%;
+        padding: 1rem;
+        flex-wrap: nowrap;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translateY(50%);
+        overflow-y: hidden;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        scroll-padding-left: 1rem;
+    }
+}
+
+.awards-badge {
+    min-width: 200px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    margin-right: 38px;
+    background: #FFF;
+    scroll-snap-align: start;
+
+    @include mq('large', 'max') {
+        min-width: 120px;
+        width: 120px;
+        margin-right: 10px;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 0 6px rgba(0,0, 0, 0.3);
+    }
+}
