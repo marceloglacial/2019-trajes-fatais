@@ -15,7 +15,7 @@
     padding: 0 1rem;
 
     @include mq('large', 'max') {
-        padding: 0 0.5rem;
+        padding: 0.5rem;
 
         img {
             max-height: 27px;
