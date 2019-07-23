@@ -32,21 +32,30 @@ function clean(path) {
 // 2.2 - Complie SASS
 // ------------------------------
 function styles(src, dest, minify) {
-    let options;
     if (minify) {
-        options = {
+        let options = {
             outputStyle: 'compressed'
         }
+        return gulp
+            .src(src + '**/*.scss')
+            .pipe(sourcemaps.init())
+            .pipe(sass(options))
+            .on('error', sass.logError)
+            .pipe(autoprefixer())
+            .pipe(concat('main.min.css'))
+            .pipe(gulp.dest(dest + 'css/'))
+    } else {
+        return gulp
+            .src(src + '**/*.scss')
+            .pipe(sourcemaps.init())
+            .pipe(sass())
+            .on('error', sass.logError)
+            .pipe(autoprefixer())
+            .pipe(concat('main.min.css'))
+            .pipe(sourcemaps.write())
+            .pipe(gulp.dest(dest + 'css/'))
+
     }
-    return gulp
-        .src(src + '**/*.scss')
-        .pipe(sourcemaps.init())
-        .pipe(sass(options))
-        .on('error', sass.logError)
-        .pipe(autoprefixer())
-        .pipe(concat('main.min.css'))
-        .pipe(sourcemaps.write())
-        .pipe(gulp.dest(dest + 'css/'))
 };
 
 function purge(dest) {
@@ -84,11 +93,9 @@ function images(src, dest) {
             interlaced: true,
             progressive: true,
             optimizationLevel: 5,
-            svgoPlugins: [
-                {
-                    removeViewBox: true
-                }
-            ]
+            svgoPlugins: [{
+                removeViewBox: true
+            }]
         }))
         .pipe(gulp.dest(dest))
     )
@@ -137,12 +144,12 @@ function liveReload() {
 // ------------------------------
 function html(src, dest) {
     return gulp.src([src + '**/*.html'])
-      .pipe(htmlmin({
-        collapseWhitespace: true,
-        removeComments: true
-      }))
-      .pipe(gulp.dest(dest));
-  };
+        .pipe(htmlmin({
+            collapseWhitespace: true,
+            removeComments: true
+        }))
+        .pipe(gulp.dest(dest));
+};
 
 // =============================================================
 // 3. Front-end

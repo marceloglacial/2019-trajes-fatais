@@ -5,14 +5,21 @@
 
 .contact {
     background: $black;
-    padding: 6rem 0;
-
-    @include mq('large', 'max') {
-        padding: 6rem 1rem 3rem 1rem;
-    }
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding-top: 250px; // hack to fix overflow-y hidden
+    margin-top: -250px; // hack to fix overflow-y hidden
 
     .container {
         display: flex;
+        align-items: center;
+        height: 800px;
+
+        @include mq('large', 'max') {
+            height: unset;
+            padding-top: 6rem;
+            padding-bottom: 4rem;
+        }
     }
 }
 
@@ -31,7 +38,8 @@
 
 .contact-image {
     position: relative;
-    width: 600px;
+    flex-grow: 1;
+    min-height: 100%;
 
     @include mq('large', 'max') {
         display: none;
@@ -39,7 +47,10 @@
 
     img {
         position: absolute;
-        top: -145px;
+        top: -50px;
+        left: 50px;
+        max-height: 820px;
+        width: auto;
     }
 }
 

@@ -1,13 +1,22 @@
-<section class="about">
+<section class="about" id="sobre">
     <div class="about-background">
-        <img class="img-responsive" srcset="uploads/about-background.png 1x, uploads/about-background@2x.png 1.5x, uploads/about-background@3x.png 2x"
-        src="uploads/about-background@3x.png" alt="personagem">
+        <picture>
+            <source media="(max-width: 450px)" srcset="uploads/about-background.png">
+            <source media="(max-width: 1024px)" srcset="uploads/about-background@2x.png">
+            <source media="(min-width: 1025px)" srcset="uploads/about-background@3x.png">
+            <img class="img-responsive" src="uploads/about-background@3x.png" alt="about-background">
+        </picture>
     </div>
+    <div class="about-container container">
         <!-- Image -->
         <div class="section-image">
-            <img class="img-responsive" srcset="uploads/about.png 1x, uploads/about@2x.png 1.5x, uploads/about@3x.png 2x"
-            src="uploads/about@3x.png" alt="personagem">
-            </div>
+            <picture>
+                <source media="(max-width: 450px)" srcset="uploads/about.png">
+                <source media="(max-width: 1024px)" srcset="uploads/about@2x.png">
+                <source media="(min-width: 1025px)" srcset="uploads/about@3x.png">
+                <img src="uploads/about@3x.png" alt="about-background">
+            </picture>
+        </div>
         <!-- /Image -->
         <!-- Info -->
         <div class="section-info">
@@ -26,19 +35,24 @@
                     Onanim, com mecânica acessível e animações 2D de alta qualidade remetendo aos grandes clássicos do
                     gênero. </p>
                 <p>Trajes Fatais é um jogo totalmente desenhado à mão na clássica técnica de pixel art. Seus criadores
-                    são apaixonados por clássicos dos arcades dos anos 90/2000 como The King of Fighters, Street Fighter e
+                    são apaixonados por clássicos dos arcades dos anos 90/2000 como The King of Fighters, Street Fighter
+                    e
                     Guity Gear. Resolveram então criar seu próprio jogo de luta, revelando toda essa influência, mas
                     acrescentando novidades e um toque bem brasileiro. </p>
                 <p> resultado tem sido tão promissor que mesmo em sua versão beta, TRAF venceu o prêmio de Melhor Jogo
-                    por voto popular no SBGames 2015 e melhor jogo Brasileiro na BGS de 2016. Além disso o projeto já foi
+                    por voto popular no SBGames 2015 e melhor jogo Brasileiro na BGS de 2016. Além disso o projeto já
+                    foi
                     aprovado no Steam Greenlight, sendo seu primeiro lançamento a partir dessa plataforma. </p>
                 <p>Embora pensado para ter um potencial competitivo, também focamos na diversão para novos públicos não
                     familiarizados com o gênero. E os jogadores poderão mergulhar nesse universo através do modo
-                    história, onde conhecerão as motivações e conflitos individuais como o objetivo da entidade com todos ali
+                    história, onde conhecerão as motivações e conflitos individuais como o objetivo da entidade com
+                    todos
+                    ali
                     presentes nessa histórica festa.</p>
             </div>
             <!-- /Text -->
 
         </div>
         <!-- /Info -->
+    </div>
 </section>
