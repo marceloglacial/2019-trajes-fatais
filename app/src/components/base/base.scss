@@ -47,10 +47,6 @@ a {
     }
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-}
 
 .img-responsive {
     width: 100%;
@@ -133,7 +129,7 @@ figure {
     }
 }
 
-.btn-controls {
+.btn--controls {
     min-height: 32px;
     min-width: 32px;
     background: #13151C no-repeat center center;
@@ -153,15 +149,15 @@ figure {
         cursor: pointer;
     }
 
-    &--prev {
+    &-prev {
         background-image: url('../images/btn-left.svg');
     }
 
-    &--next {
+    &-next {
         background-image: url('../images/btn-right.svg');
     }
 
-    &--all {
+    &-all {
         font-size: 1rem;
         padding: 0 2rem;
 

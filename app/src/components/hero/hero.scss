@@ -5,47 +5,66 @@
 
 // Local variables 
 $hero-slide-width: 50%;
+$hero-slide-height: 800px;
+
+.hero {
+    overflow: hidden;
+    position: relative;
+
+    &::after {
+        content: '';
+        display: block;
+        content: '';
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        min-height: 30%;
+        background-image: linear-gradient(transparent 0%, $black 100%);
+    }
+}
 
 .hero-slides {
     position: relative;
-    min-height: 720px;
+    height: $hero-slide-height;
+    max-height: 80vh;
 
-    @include mq('large', 'max') {
-        min-height: unset;
+    @include mq('medium') {
+        max-height: 400px;
     }
 
+    @include mq('large') {
+        max-height: 100vh;
+    }
+
+    @include mq('4k') {
+        height: 1200px;
+    }
 }
 
 .hero-slide {
+    position: relative;
     min-width: 100%;
+    min-height: 100%;
     display: none;
 
     &-info {
         position: relative;
+        z-index: 10;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        height: 85vh;
-        min-height: unset;
         padding-bottom: 4rem;
+        height: $hero-slide-height;
+        max-height: 80vh;
 
         @include mq('medium') {
-            height: 100vh;
-            max-height: 460px;
+            max-height: 400px;
         }
 
         @include mq('large') {
-            max-height: 820px;
-            min-height: 650px;
-            padding-bottom: 4rem;
-        }
-
-        @include mq('super-large') {
-            max-height: 1080px;
-        }
-
-        @include mq('4k') {
-            max-height: 1380px;
+            max-height: 100vh;
         }
     }
 
@@ -78,24 +97,24 @@ $hero-slide-width: 50%;
 
     &-image {
         position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        width: 100%;
-        min-height: 1200px;
-        overflow: hidden;
-        &::after {
-            content: '';
-            display: block;
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background-image: linear-gradient(transparent 0%, $black 60%);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+        width: 100vw;
+
+        @include mq('super-large') {
+            top: 60%;
         }
-    
+
+        @include mq('4k') {
+            top: 70%;
+        }
+
+        @include mq('extra-large', 'max') {
+            top: 0;
+            transform: translate(-50%, 0);
+        }
     }
 
     &-actions {

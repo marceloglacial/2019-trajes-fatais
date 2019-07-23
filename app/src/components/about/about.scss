@@ -5,15 +5,31 @@
 
 .about {
     position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    padding-top: 6rem;
-    padding-bottom: 6rem;
     overflow: hidden;
+    height: 100vh;
+    max-height: 800px;
+    display: flex;
+    align-items: center;
 
     @include mq('large', 'max') {
         padding-top: 2rem;
         padding-bottom: 2rem;
+        height: unset;
+        max-height: unset;
+    }
+
+    &-container {
+        display: flex;
+        flex-wrap: wrap;
+
+        @include mq('large', 'max') {
+            display: block;
+        }
+    }
+
+
+    .section-header {
+        padding-top: 0;
     }
 
     .section-header--about {
@@ -29,22 +45,45 @@
         }
     }
 
+
     .section-image {
-        width: 50%;
+        flex-grow: 1;
+        position: relative;
+        min-height: 100%;
 
         @include mq('large', 'max') {
             width: 100%;
-            padding: 1rem 3rem;
+            padding: 1rem;
+        }
+
+        picture {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 0 1rem;
+
+            @include mq('large', 'max') {
+                position: unset;
+                transform: unset;
+                padding: unset;
+            }
+
+            img {
+                max-height: 700px;
+
+                @include mq('large', 'max') {
+                    max-width: 100%;
+                }
+            }
         }
     }
 
     .section-info {
         width: 50%;
-        padding: 0 6rem;
 
         @include mq('large', 'max') {
             width: 100%;
-            padding: 1rem;
         }
     }
 }
