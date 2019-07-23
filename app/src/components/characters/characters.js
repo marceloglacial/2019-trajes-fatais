@@ -1,113 +1,96 @@
 //--------------------------------------------------------------
-// Characters Scroll controls
+// Characters List
 //--------------------------------------------------------------
 
-let parent = $('.characters-list');
-let container = $('.characters-list__items');
-let containerWidth = container.outerWidth();
-let header = $('.section-header--characters').offset();
-let containerInitialPosition = header.left + 16;
-let items = $('.characters-list__item').length;
-let item = $('.characters-list__item');
-let itemWidth = item.outerWidth() + 16;
-let itemsVisible = Math.floor(containerWidth / itemWidth);
-let controls = $('.characters-list-controls');
-let btn = $('.characters-list-controls__item');
-let prev = $('.characters-list-controls__item--prev');
-let next = $('.characters-list-controls__item--next');
-let all = $('.characters-list-controls__item--all');
-let modal = $('.characters-list-modal');
-let modalClose = $('.characters-list-modal__close');
-let currentSlide = 1;
-let maxScroll = Math.ceil(items / itemsVisible)
-let slideOffset = itemWidth * itemsVisible;
-
-// Initial states
-$(document).ready(function () {
-    container.css({
-        'transform': 'translate(' + containerInitialPosition + 'px)',
-        'opacity': 1
-    });
-});
-
-// Remove link
-btn.on('click', function (e) {
-    e.preventDefault();
-});
-
-// Scroll left
-function scrollLefet() {
-    container.css({
-        'transform': 'translate(' + containerInitialPosition + 'px)'
-    });
-    currentSlide = 1;
-
-}
-prev.on('click', function (e) {
-    scrollLefet();
-});
+const charListContainer = $('.characters-list');
+const charListItems = $('.characters-list__items');
+const charListItem = $('.characters-list__item');
+const charListScrollWindow = (Math.floor(charListItems.width() / charListItem.width())) * (charListItem.width() + 16);
+const charListBtnPrev = $('.characters-list-controls__item--prev');
+const charListBtnNext = $('.characters-list-controls__item--next');
+const charListBtnAll = $('.characters-list-controls__item--all');
+let charListSlide = 1;
 
 // Scroll right
-function scrollRight() {
-    if (currentSlide < maxScroll) {
-        container.css({
-            'transform': 'translate(-' + ((currentSlide * slideOffset) - containerInitialPosition) + 'px)'
-        });
-        currentSlide++;
-    }
-}
-next.on('click', function (e) {
+function scrollRight(screen) {
+    if (charListSlide <= (charListItem.length / (Math.floor(charListItems.width() / charListItem.width())))) {
+        charListItems.css({
+            'transform': 'translateX(-' + (charListScrollWindow * charListSlide) + 'px)'
+        })
+        charListSlide++;
+    } else {
+        if(!screen) {
+            scrollLeft();
+        }
+    };
+};
+
+// Scroll right
+function scrollLeft() {
+    charListItems.css({
+        'transform': 'translateX(0)'
+    })
+    charListSlide = 1;
+};
+
+charListBtnPrev.on('click', function () {
+    scrollLeft();
+});
+charListBtnNext.on('click', function () {
     scrollRight();
 });
 
-// Detect swipe
-var touchInit = 0;
-var touchLast = 0;
 
-document.addEventListener('touchstart', function (e) {
+// Detect swipe
+let touchInit = 0;
+let touchLast = 0;
+const touchContainer = document.querySelector('.characters-list__items');
+
+touchContainer.addEventListener('touchstart', function (e) {
     touchInit = e.changedTouches[0].pageX;
 }, false);
 
-document.addEventListener('touchend', function (e) {
+touchContainer.addEventListener('touchend', function (e) {
     touchLast = e.changedTouches[0].pageX;
     if ((touchLast - touchInit) < 0) {
-        scrollRight();
+        scrollRight('mobile');
     } else {
-        scrollLefet();
-    }
+        scrollLeft();
+    };
 }, false);
 
 
 // Display all characters
-all.on('click', function (e) {
-    controls.fadeOut()
-    parent.fadeOut(200);
-    container.css({
-        'transform': 'translate(0px)'
-    });
-    setTimeout(() => {
-        container.addClass('characters-list__items--all')
-        container.addClass('container')
-        parent.addClass('characters-list--all').fadeIn()
-    }, 200);
+charListBtnAll.on('click', function (e) {
+    scrollLeft();
+    charListContainer.addClass('characters-list--all');
+    $('.characters-list-controls').fadeOut();
 });
 
+
+//--------------------------------------------------------------
+// Modal 
+//--------------------------------------------------------------
+let charListModal = $('.characters-list-modal');
+let charListModalClose = $('.characters-list-modal__close');
+let charListModalItem = charListItem;
+
 // Open modal
-item.on('click', function (e) {
+charListModalItem.on('click', function (e) {
     e.preventDefault();
-    modal.addClass('characters-list-modal--open');
+    charListModal.addClass('characters-list-modal--open');
 })
 
 // Close modal
-modalClose.on('click', function (e) {
+charListModalClose.on('click', function (e) {
     e.preventDefault();
-    modal.removeClass('characters-list-modal--open');
+    charListModal.removeClass('characters-list-modal--open');
 })
 
 // Close modal on ESC
 window.addEventListener("keydown", function (event) {
     if (event.key === "Escape") {
-        modal.removeClass('characters-list-modal--open');
+        charListModal.removeClass('characters-list-modal--open');
     }
 });
 
@@ -120,8 +103,8 @@ let modalGalleryItems = $(modalGalleryItem).length;
 let modalGalleyActiveClass = 'characters-list-modal__gallery__item-main--active';
 let modalThumbnail = '.characters-list-modal__gallery-thumbnail';
 let modalThumbnailActiveClass = 'characters-list-modal__gallery-thumbnail--active';
-let modalControlsPrev = '.characters-list-modal__gallery-control.btn-controls--prev';
-let modalControlsNext = '.characters-list-modal__gallery-control.btn-controls--next';
+let modalControlsPrev = '.characters-list-modal__gallery-control.btn--controls-prev';
+let modalControlsNext = '.characters-list-modal__gallery-control.btn--controls-next';
 
 // Reset first items
 $(modalGalleryItem + ':first-child').addClass(modalGalleyActiveClass);

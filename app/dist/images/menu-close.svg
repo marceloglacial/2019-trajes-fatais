@@ -1,1 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="34.648" height="34.648"><g data-name="Group 1" transform="translate(-122.176 -295.676)" fill="#8b8b8b"><rect data-name="Rectangle 1" width="45" height="4" rx="2" transform="rotate(45 -294.41 298.731)"/><rect data-name="Rectangle 3" width="45" height="4" rx="2" transform="rotate(-45 456.41 16.269)"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="34.648" height="34.648" viewBox="0 0 34.648 34.648">
+  <g id="Group_1" data-name="Group 1" transform="translate(-122.176 -295.676)">
+    <rect id="Rectangle_1" data-name="Rectangle 1" width="45" height="4" rx="2" transform="translate(125.004 295.676) rotate(45)" fill="#8b8b8b"/>
+    <rect id="Rectangle_3" data-name="Rectangle 3" width="45" height="4" rx="2" transform="translate(122.176 327.496) rotate(-45)" fill="#8b8b8b"/>
+  </g>
+</svg>
