@@ -51,12 +51,11 @@
             flex-direction: column;
             justify-content: center;
         }
-
     }
 }
 
 .awards-text {
-    width: 70%;
+    width: 40%;
 
     @include mq('extra-large', 'max') {
         width: 100%;
@@ -69,43 +68,28 @@
 }
 
 .badges-slides {
-    display: flex;
-    flex-grow: 1;
-    margin-left: 2rem;
-
-    @include mq('extra-large', 'max') {
-        width: 100%;
-    }
+    width: 60%;
+    height: 100%;
 
     @include mq('large', 'max') {
-        margin-left: 0;
         width: 100%;
-        height: 120px;
-        overflow: hidden;
+        height: 0px;
         position: absolute;
-        bottom: 0;
+        bottom: 70px;
         left: 0;
-        transform: translateY(calc(50% - 10px));
     }
-}
 
-.awards-badges {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    .simplebar-content {
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
 
-    @include mq('large', 'max') {
-        height: 110px;
-        padding-top: 10px;
-        box-sizing: content-box;
-        padding-bottom: 50px;
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-        overflow-y: hidden;
-        overflow-x: scroll;
-        scroll-snap-type: x mandatory;
-        scroll-padding-left: 1rem;
+        @include mq('large', 'max') {
+            flex-wrap: nowrap;
+            overflow-y: hidden;
+            overflow-x: scroll;
+            padding: 10px 0 !important; // to override simplebar css
+        }
     }
 }
 
