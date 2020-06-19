@@ -21,7 +21,7 @@ function scrollRight(screen) {
       Math.floor(charListItems.width() / charListItem.width())
   ) {
     charListItems.css({
-      transform: 'translateX(-' + charListScrollWindow * charListSlide + 'px)',
+      right: charListScrollWindow * charListSlide,
     });
     charListSlide++;
   } else {
@@ -34,7 +34,7 @@ function scrollRight(screen) {
 // Scroll right
 function scrollLeft() {
   charListItems.css({
-    transform: 'translateX(0)',
+    right: 0,
   });
   charListSlide = 1;
 }
@@ -105,6 +105,16 @@ window.addEventListener('keydown', function (event) {
     charListModal.removeClass('characters-list-modal--open');
   }
 });
+
+// charListBtnAll.on('click', function (e) {
+//     charListItems.fadeOut();
+//     window.setTimeout(function () {
+//       charListItems.addClass('container characters-list__items--all');
+//       charListItems.fadeIn();
+//     }, 400);
+
+//     $('.characters-list-controls').fadeOut();
+//   });
 
 //--------------------------------------------------------------
 // Modal Gallery
