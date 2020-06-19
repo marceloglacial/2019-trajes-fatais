@@ -106,16 +106,6 @@ window.addEventListener('keydown', function (event) {
   }
 });
 
-// charListBtnAll.on('click', function (e) {
-//     charListItems.fadeOut();
-//     window.setTimeout(function () {
-//       charListItems.addClass('container characters-list__items--all');
-//       charListItems.fadeIn();
-//     }, 400);
-
-//     $('.characters-list-controls').fadeOut();
-//   });
-
 //--------------------------------------------------------------
 // Modal Gallery
 //--------------------------------------------------------------
